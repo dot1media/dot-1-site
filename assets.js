@@ -39,7 +39,7 @@ window.SITE_ASSETS = {
       "caption": "Family session"
     },
     {
-      "url": "FloodFamily.jpg",
+      "url": "images/FloodFamily.jpg",
       "caption": "Family session"
     },
     {
