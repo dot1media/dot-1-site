@@ -3,7 +3,7 @@
    Replace this file in the repo to update every image & video on dot1.media. */
 window.SITE_ASSETS = {
   "logoNav": "images/GreyTPLogoAnimated.gif",
-  "logoContact": "images/GreyTPLogoAnimated.gif",
+  "logoContact": "images/dot1mediainverted.gif",
   "logoFooter": "images/BLKFullTPLogo.png",
   "hero": "images/BASEcamp.jpg",
   "purposeImage": "images/mountian.jpg",
