@@ -31,7 +31,7 @@ window.SITE_ASSETS = {
       "caption": "Family session"
     },
     {
-      "url": "images/wedding.jpg",
+      "url": "images/COC72.jpg",
       "caption": "Portrait"
     },
     {
@@ -47,7 +47,7 @@ window.SITE_ASSETS = {
       "caption": "Family session"
     },
     {
-      "url": "images/AlexMotherDayMini.jpg",
+      "url": "images/COC372.jpg",
       "caption": "Mother's Day mini"
     },
     {
