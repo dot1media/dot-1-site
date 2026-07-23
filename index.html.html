@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dot One Media · Create with Purpose | Cinematography &amp; Strategic Media, Wasilla, Alaska</title>
+<meta name="description" content="Dot One Media is a faith-driven media production studio in Wasilla, Alaska, specializing in cinematography, photography, the Theopoetecology framework, and the Dot 1 News app. Create with purpose.">
+<meta property="og:title" content="Dot One Media · Create with Purpose">
+<meta property="og:description" content="Cinematography, photography, and strategic media from Wasilla, Alaska. Home of Theopoetecology and Dot 1 News.">
+<meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/63a02ca4-7732-4b53-ba8b-f3402b3a20a1/DSC09831.jpg?format=1800w">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.dot1.media">
+<link rel="icon" href="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/8c3177dd-95f3-4a28-bd61-cd2e5f0ef5ca/Untitled-1-red.png?format=100w">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.squarespace-cdn.com" crossorigin>
+<link rel="canonical" href="https://www.dot1.media/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Dot One Media · DOT ONE LLC">
+<meta name="geo.region" content="US-AK">
+<meta name="geo.placename" content="Wasilla, Alaska">
+<meta name="geo.position" content="61.5814;-149.4394">
+<meta name="ICBM" content="61.5814, -149.4394">
+<meta property="og:site_name" content="Dot One Media">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Alaska landscape captured by Dot One Media">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dot One Media · Create with Purpose">
+<meta name="twitter:description" content="Faith-driven cinematography, photography, and strategic media from Wasilla, Alaska. Home of Theopoetecology and the Dot 1 News app.">
+<meta name="twitter:image" content="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/63a02ca4-7732-4b53-ba8b-f3402b3a20a1/DSC09831.jpg?format=1800w">
+<style>
+/* ============================================================
+   DOT ONE MEDIA · design tokens
+   ============================================================ */
+:root{
+  --ink:#fbf8f2;        /* lightest paper (page bg) */
+  --carbon:#f4efe6;     /* section bg 2 */
+  --smoke:#ece5d8;      /* card / third bg */
+  --line:rgba(33,32,28,.13);
+  --bone:#221f1a;       /* primary ink text */
+  --bone-dim:rgba(34,31,26,.66);
+  --bone-faint:rgba(34,31,26,.42);
+  --red:#e23b2e;
+  --red-deep:#b32a1e;
+  --gold:#a9841a;       /* darkened for contrast on light */
+  --amber:#c07a2a;
+  --theo-ink:#f0efe2;   /* warm cream-green paper */
+  --theo-green:#5f8340; /* darkened for contrast on light */
+  --nav-h:104px;
+  --paper:#fbf8f2;--paper-2:#f4efe6;--paper-3:#ece5d8;
+  --ink-dim:rgba(34,31,26,.66);--ink-faint:rgba(34,31,26,.42);
+  --sky:#7ba7bb;
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-body:'Archivo',system-ui,sans-serif;
+  --font-serif:'Fraunces',Georgia,serif;
+  --font-head:"Bodoni 72","Bodoni Moda",Didot,"Times New Roman",serif;
+  --font-mono:'IBM Plex Mono','Courier New',monospace;
+  --font-brand:'Bodoni Moda',Didot,'Times New Roman',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--red);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+section{position:relative;scroll-margin-top:var(--nav-h)}
+
+/* ---------- film grain + vignette ---------- */
+.grain{
+  position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.04;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 8s steps(10) infinite;
+}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}10%{transform:translate(-3%,-6%)}
+  30%{transform:translate(4%,3%)}50%{transform:translate(-4%,6%)}
+  70%{transform:translate(5%,-4%)}90%{transform:translate(-2%,4%)}
+}
+.vignette{position:fixed;inset:0;z-index:59;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 58%,rgba(0,0,0,.5) 100%)}
+
+/* ---------- utilities ---------- */
+.intro-veil{position:fixed;inset:0;z-index:120;background:#0b0b0b;display:grid;place-items:center;overflow:hidden}
+html:not(.js) .intro-veil{display:none}
+.veil-bloom{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--paper);transform:scale(0)}
+.veil-dot{position:relative;width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(226,59,46,.6);z-index:2}
+.container{width:min(1200px,92vw);margin:0 auto}
+.eyebrow{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--bone-faint);
+  display:flex;align-items:center;gap:12px;margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--red)}
+.eyebrow .dotmark{width:6px;height:6px;border-radius:50%;background:var(--red);display:inline-block}
+.section-pad{padding:clamp(90px,13vw,170px) 0}
+.h-display{
+  font-family:var(--font-head);font-weight:700;
+  line-height:1.02;letter-spacing:0;
+  font-size:clamp(2.4rem,6vw,4.6rem);
+}
+.h-serif{
+  font-family:var(--font-head);font-weight:500;
+  font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.1;letter-spacing:0;
+}
+.lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--bone-dim);max-width:62ch}
+.mono-note{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;color:var(--bone-faint)}
+
+/* ---------- buttons ---------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--font-mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  padding:16px 30px;border:1px solid rgba(33,32,28,.26);color:var(--bone);
+  overflow:hidden;transition:color .35s,border-color .35s;isolation:isolate;
+}
+.btn::after{
+  content:"";position:absolute;inset:0;background:var(--red);z-index:-1;
+  transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.7,0,.2,1);
+}
+.btn:hover::after,.btn:focus-visible::after{transform:scaleX(1)}
+.btn:hover,.btn:focus-visible{border-color:var(--red);color:#fff}
+.btn .b-dot{width:7px;height:7px;border-radius:50%;background:var(--red);transition:background .35s}
+.btn:hover .b-dot{background:#fff}
+.btn--gold::after{background:var(--gold)}
+.btn--gold:hover{border-color:var(--gold);color:var(--ink)}
+.btn--gold .b-dot{background:var(--gold)}
+.btn--gold:hover .b-dot{background:var(--ink)}
+.link-underline{position:relative;padding-bottom:3px}
+.link-underline::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.link-underline:hover::after{transform:scaleX(1);transform-origin:left}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:80;height:var(--nav-h);
+  display:flex;align-items:center;
+  background:linear-gradient(rgba(251,248,242,.95),rgba(251,248,242,.72) 70%,transparent);
+  backdrop-filter:blur(2px);
+  transition:background .4s;
+}
+.nav-inner{width:min(1360px,94vw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:inline-flex;align-items:center}
+.brand img{height:84px;width:auto;display:block}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim)}
+.nav-links a:hover{color:var(--bone)}
+.nav-cta{border:1px solid var(--line);padding:10px 18px;font-family:var(--font-mono);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:.3s}
+.nav-cta:hover{background:var(--red);border-color:var(--red);color:#fff}
+.timecode{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--bone-faint);
+  display:flex;align-items:center;gap:8px;white-space:nowrap}
+.timecode .rec{width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+.menu-btn{display:none;flex-direction:column;gap:5px;padding:10px;z-index:95}
+.menu-btn span{display:block;width:26px;height:2px;background:var(--bone);transition:.35s}
+body.menu-open .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .menu-btn span:nth-child(2){opacity:0}
+body.menu-open .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:90;background:rgba(251,248,242,.98);
+  display:flex;flex-direction:column;justify-content:center;padding:0 8vw;gap:6px;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+body.menu-open .mobile-menu{opacity:1;pointer-events:auto}
+.mobile-menu a{
+  font-family:var(--font-display);font-stretch:114%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(2rem,9vw,3.4rem);line-height:1.16;color:var(--bone-dim);
+  transform:translateY(24px);opacity:0;transition:transform .5s,opacity .5s,color .3s;
+}
+body.menu-open .mobile-menu a{transform:translateY(0);opacity:1}
+.mobile-menu a:hover{color:var(--red)}
+.mobile-menu a:nth-child(2){transition-delay:.05s}.mobile-menu a:nth-child(3){transition-delay:.1s}
+.mobile-menu a:nth-child(4){transition-delay:.15s}.mobile-menu a:nth-child(5){transition-delay:.2s}
+.mobile-menu a:nth-child(6){transition-delay:.25s}.mobile-menu a:nth-child(7){transition-delay:.3s}
+.mobile-menu .mono-note{margin-top:34px;transition-delay:.35s}
+
+/* ---------- gateway rail (desktop) ---------- */
+.rail{position:fixed;left:28px;top:50%;transform:translateY(-50%);z-index:70;
+  height:42vh;display:flex;align-items:stretch;gap:14px;pointer-events:none}
+.rail-track{width:1px;background:var(--line);position:relative}
+.rail-dot{position:absolute;left:50%;top:0;width:9px;height:9px;border-radius:50%;
+  background:var(--red);transform:translate(-50%,-50%);
+  box-shadow:0 0 12px rgba(226,59,46,.8);transition:background .5s,box-shadow .5s}
+.rail-label{writing-mode:vertical-rl;font-family:var(--font-mono);font-size:10px;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--bone-faint);align-self:center}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 4vh) 0 5vh;
+  background:radial-gradient(120% 90% at 50% -10%,#ffffff 0%,var(--paper) 46%,var(--paper-2) 100%)}
+.hero .container{width:min(1180px,92vw)}
+.hero-title{
+  font-family:var(--font-head);
+  font-weight:700;
+  line-height:1;letter-spacing:0;color:var(--bone);
+  font-size:clamp(2.8rem,10vw,8.8rem);
+}
+.hero-title .word{display:block;overflow:hidden;padding:.04em 0}
+.hero-title .word span{display:inline-block}
+.hero-title .end-dot{color:var(--red);font-style:normal}
+.hero-sub{margin-top:24px;display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 32px}
+.hero-tag{font-family:var(--font-serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.3rem,2.6vw,1.85rem);color:var(--bone)}
+.hero-rotator{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-faint);min-height:1.6em;display:flex;gap:12px;align-items:center}
+.hero-rotator::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);flex:none}
+.hero-rotator span{transition:opacity .5s}
+.hero-meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:6px 26px}
+.hero-meta .mono-note{display:flex;align-items:center;gap:9px}
+.hero-meta .mono-note::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red)}
+.hero-frame{margin-top:clamp(38px,5vw,60px);position:relative;overflow:hidden;border-radius:4px;
+  box-shadow:0 40px 80px -30px rgba(33,32,28,.45);aspect-ratio:21/9}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+@media(max-width:640px){.hero-frame{aspect-ratio:4/3}}
+
+/* ---------- ticker ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;padding:18px 0;background:var(--paper-3)}
+.ticker-track{display:flex;gap:0;width:max-content;animation:marquee 30s linear infinite}
+.ticker-track p{font-family:var(--font-display);font-stretch:114%;font-weight:700;
+  text-transform:uppercase;font-size:15px;letter-spacing:.28em;color:var(--bone-dim);
+  white-space:nowrap;padding-right:14px}
+.ticker-track p em{font-style:normal;color:var(--red);padding:0 14px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- purpose / why .1 ---------- */
+.purpose{background:var(--ink)}
+.purpose-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,90px);align-items:center}
+.big-one{
+  font-family:var(--font-display);font-stretch:125%;font-weight:900;line-height:.8;
+  font-size:clamp(9rem,24vw,21rem);color:transparent;
+  -webkit-text-stroke:1.5px rgba(34,31,26,.22);
+  display:flex;align-items:baseline;user-select:none;
+}
+.big-one .p-dot{width:.14em;height:.14em;border-radius:50%;background:var(--red);
+  display:inline-block;margin-right:.06em;box-shadow:0 0 30px rgba(226,59,46,.55);
+  -webkit-text-stroke:0}
+.purpose-copy .h-serif{margin-bottom:26px}
+.purpose-copy p+p{margin-top:18px}
+.purpose-copy .gold{color:var(--gold);font-style:italic;font-family:var(--font-serif)}
+.mission-lines{margin-top:56px;border-top:1px solid var(--line)}
+.mission-line{display:flex;align-items:baseline;gap:26px;padding:22px 0;border-bottom:1px solid var(--line)}
+.mission-line .idx{font-family:var(--font-mono);font-size:12px;color:var(--red);letter-spacing:.15em;flex:none}
+.mission-line .txt{font-family:var(--font-serif);font-size:clamp(1.25rem,2.8vw,2rem);line-height:1.25}
+.purpose-img{margin-top:76px;overflow:hidden;position:relative}
+.purpose-img img{width:100%;height:clamp(320px,52vw,560px);object-fit:cover;object-position:center 30%}
+.img-tag{position:absolute;left:18px;bottom:14px;font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--bone);
+  background:rgba(20,18,14,.6);color:#fff;padding:7px 12px;backdrop-filter:blur(3px)}
+
+/* ---------- work / cinematography ---------- */
+.work{background:var(--carbon)}
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(50px,7vw,90px)}
+.services-list{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px}
+.services-list span{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bone-faint);display:flex;align-items:center;gap:9px}
+.services-list span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red)}
+.work-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);
+  align-items:center;padding:clamp(44px,6vw,80px) 0;border-top:1px solid var(--line)}
+.work-row:last-of-type{border-bottom:1px solid var(--line)}
+.work-row:nth-child(even) .work-media{order:2}
+.work-media{overflow:hidden;position:relative;aspect-ratio:16/10;background:var(--smoke)}
+.work-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.3,0,.2,1)}
+.work-row:hover .work-media img{transform:scale(1.05)}
+.work-num{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;color:var(--red);margin-bottom:16px;display:block}
+.work-info h3{font-family:var(--font-display);font-stretch:116%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1;margin-bottom:18px}
+.work-info p{color:var(--bone-dim);max-width:52ch}
+.work-info .btn{margin-top:30px}
+.badge-soon{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,39,.4);
+  padding:6px 12px;margin-bottom:16px}
+/* youtube facade */
+.yt-facade{position:absolute;inset:0;cursor:pointer;display:grid;place-items:center;padding:0;border:0;width:100%}
+.yt-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.yt-facade:hover img{transform:scale(1.05)}
+.yt-facade::after{content:"";position:absolute;inset:0;background:rgba(7,7,7,.32)}
+.play-btn{position:relative;z-index:2;width:84px;height:84px;border-radius:50%;
+  border:1px solid rgba(236,231,220,.5);display:grid;place-items:center;
+  background:rgba(7,7,7,.45);backdrop-filter:blur(4px);transition:.35s}
+.play-btn::before{content:"";width:0;height:0;border-left:18px solid var(--bone);
+  border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.yt-facade:hover .play-btn{background:var(--red);border-color:var(--red);transform:scale(1.08)}
+.yt-facade[data-yt=""]{cursor:default}
+.yt-facade[data-yt=""] .play-btn{display:none}
+.yt-facade[data-yt=""]::after{display:none}
+.work-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- photography ---------- */
+.photo{background:var(--ink)}
+.photo-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.8vw,22px);margin-top:clamp(46px,6vw,80px)}
+.ph{overflow:hidden;position:relative;background:var(--smoke)}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.3,0,.2,1)}
+.ph:hover img,.ph:hover video{transform:scale(1.06)}
+.ph::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;
+  padding:34px 16px 12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--bone);opacity:0;transition:opacity .4s;
+  background:linear-gradient(transparent,rgba(7,7,7,.85))}
+.ph:hover::after{opacity:1}
+.ph-1{grid-column:span 5;aspect-ratio:3/4}
+.ph-2{grid-column:span 4;aspect-ratio:4/5;margin-top:14%}
+.ph-3{grid-column:span 3;aspect-ratio:3/4}
+.ph-4{grid-column:span 3;aspect-ratio:3/4;margin-top:-8%}
+.ph-5{grid-column:span 5;aspect-ratio:4/3;margin-top:6%}
+.ph-6{grid-column:span 4;aspect-ratio:3/4}
+.ph-7{grid-column:span 6;aspect-ratio:4/3;margin-top:4%}
+.ph-8{grid-column:span 6;aspect-ratio:16/10;margin-top:12%}
+.photo-cta{margin-top:clamp(50px,7vw,90px);text-align:center}
+
+/* ---------- theopoetecology ---------- */
+.theo{background:var(--theo-ink);transition:background-color .8s}
+.theo .eyebrow::before{background:var(--gold)}
+.theo .eyebrow .dotmark{background:var(--gold)}
+.theo-head{max-width:900px}
+.theo-head .h-serif{font-size:clamp(2.3rem,5.4vw,4.2rem);margin-bottom:28px}
+.theo-head .h-serif em{color:var(--theo-green)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px);margin-top:clamp(50px,7vw,90px)}
+.pillar{border:1px solid rgba(143,174,107,.22);padding:clamp(24px,3vw,40px);background:rgba(143,174,107,.04)}
+.pillar h4{font-family:var(--font-serif);font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:6px}
+.pillar .gk{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--theo-green);display:block;margin-bottom:18px}
+.pillar p{font-size:15.5px;color:var(--bone-dim)}
+/* TNF stages */
+.tnf{margin-top:clamp(80px,11vw,150px)}
+.tnf-intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(40px,6vw,70px)}
+.stage{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);
+  padding:clamp(36px,5vw,64px) 0;border-top:1px solid rgba(34,31,26,.12);align-items:start}
+.stage:last-child{border-bottom:1px solid rgba(34,31,26,.12)}
+.stage-num{font-family:var(--font-mono);font-size:13px;letter-spacing:.2em;color:var(--stage-c,var(--theo-green));
+  padding-top:10px;min-width:118px}
+.stage h4{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.6rem);line-height:1;
+  margin-bottom:14px;color:var(--stage-c,var(--bone));display:flex;align-items:center;gap:18px}
+.stage h4::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--stage-c,var(--theo-green)),transparent);opacity:.5}
+.stage p{color:var(--bone-dim);max-width:58ch}
+.stage-seed{--stage-c:#7fae6b}
+.stage-root{--stage-c:#a3805a}
+.stage-growth{--stage-c:#9ec25f}
+.stage-fruit{--stage-c:#c9a227}
+.stage-harvest{--stage-c:#e0b84c}
+/* book + series */
+.theo-cta{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,6vw,80px);
+  align-items:center;margin-top:clamp(80px,11vw,150px)}
+.book{width:clamp(200px,24vw,270px);aspect-ratio:2/3;position:relative;
+  background:linear-gradient(150deg,#20301c,#12200f 72%);
+  border:1px solid rgba(201,162,39,.35);padding:26px 22px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:18px 24px 60px rgba(0,0,0,.6);transform:rotate(-2deg)}
+.book::before{content:"";position:absolute;left:9px;top:0;bottom:0;width:1px;background:rgba(201,162,39,.3)}
+.book h5{font-family:var(--font-serif);font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15}
+.book .b-sub{font-family:var(--font-serif);font-style:italic;font-size:13.5px;color:var(--bone-dim);margin-top:12px}
+.book .b-auth{font-family:var(--font-mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.book .b-dotone{width:9px;height:9px;border-radius:50%;background:var(--gold);margin-bottom:14px}
+.theo-cta-copy h3{font-family:var(--font-serif);font-size:clamp(1.7rem,3.2vw,2.6rem);margin-bottom:16px}
+.theo-cta-copy p{color:var(--bone-dim);max-width:58ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+
+/* ---------- dot 1 news ---------- */
+.news{background:linear-gradient(180deg,var(--paper-2),var(--paper));overflow:hidden}
+.news-head{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+.news-title{font-family:var(--font-head);font-weight:700;line-height:1;letter-spacing:0;
+  font-size:clamp(2.6rem,7vw,5.4rem)}
+.news-title .l2{color:var(--red)}
+.news-copy p{color:var(--bone-dim);margin-top:22px;max-width:56ch}
+.appstore-row{display:flex;align-items:center;gap:22px;margin-top:36px;flex-wrap:wrap}
+.appstore-link{display:inline-flex;transition:transform .3s}
+.appstore-link:hover{transform:scale(1.04)}
+.appstore-badge{height:56px;width:auto;display:block}
+.read-online{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);
+  font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--bone-dim);
+  padding:12px 0;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+.read-online::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0}
+.read-online::after{content:"\2192";transition:transform .3s var(--ease)}
+.read-online:hover{color:var(--bone);border-color:var(--red)}
+.read-online:hover::after{transform:translateX(4px)}
+.app-icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(226,59,46,.25)}
+/* phone */
+.phone-wrap{display:flex;justify-content:center;position:relative}
+.phone-glow{position:absolute;top:50%;left:50%;width:130%;height:80%;transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse,rgba(226,59,46,.1),transparent 65%);pointer-events:none}
+.phone{width:clamp(230px,26vw,290px);aspect-ratio:9/19.2;border-radius:42px;
+  border:1.5px solid rgba(236,231,220,.22);background:#000;position:relative;
+  padding:10px;box-shadow:0 40px 90px rgba(0,0,0,.7)}
+.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  width:34%;height:22px;background:#000;border-radius:12px;z-index:3;border:1px solid rgba(34,31,26,.12)}
+.phone-screen{position:relative;width:100%;height:100%;border-radius:32px;overflow:hidden;background:#050505}
+.phone-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .8s}
+.phone-screen img.active{opacity:1}
+.phone-dots{display:flex;gap:8px;justify-content:center;margin-top:22px}
+.phone-dots button{width:8px;height:8px;border-radius:50%;background:var(--line);transition:.3s;padding:0}
+.phone-dots button.active{background:var(--red);transform:scale(1.25)}
+/* lenses */
+.lens-block{margin-top:clamp(80px,11vw,150px)}
+.lens-intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(40px,6vw,70px)}
+.lens-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,28px)}
+.lens{border:1px solid var(--line);padding:clamp(24px,3vw,36px) clamp(20px,2.4vw,30px);
+  background:rgba(226,59,46,.03);transition:border-color .4s,transform .4s}
+.lens:hover{border-color:rgba(226,59,46,.5);transform:translateY(-6px)}
+.lens-ring{width:76px;height:76px;margin-bottom:24px}
+.lens-ring circle{fill:none;stroke-width:3}
+.lens-ring .ring-bg{stroke:rgba(34,31,26,.12)}
+.lens-ring .ring-fg{stroke:var(--red);stroke-linecap:round;stroke-dasharray:207;stroke-dashoffset:207;
+  transform:rotate(-90deg);transform-origin:center}
+.lens-ring text{fill:var(--bone);font-family:var(--font-mono);font-size:17px;letter-spacing:.05em}
+.lens h4{font-family:var(--font-display);font-stretch:112%;font-weight:700;text-transform:uppercase;
+  font-size:16.5px;letter-spacing:.06em;margin-bottom:12px}
+.lens p{font-size:14.5px;color:var(--bone-dim);line-height:1.6}
+.news-quote{margin-top:clamp(70px,9vw,120px);text-align:center}
+.news-quote p{font-family:var(--font-serif);font-style:italic;
+  font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.3;max-width:22ch;margin:0 auto}
+.news-quote p strong{color:var(--red);font-weight:400}
+.news-quote .mono-note{margin-top:22px;display:block}
+
+/* ---------- team ---------- */
+.team{background:var(--carbon)}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);margin-top:clamp(50px,7vw,90px)}
+.member .member-img{overflow:hidden;aspect-ratio:4/5;background:var(--smoke)}
+.member .member-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;
+  filter:grayscale(12%) contrast(1.02);transition:filter .6s,transform .9s cubic-bezier(.3,0,.2,1)}
+.member:hover .member-img img{filter:grayscale(0);transform:scale(1.04)}
+.member h3{font-family:var(--font-display);font-stretch:116%;font-weight:900;text-transform:uppercase;
+  font-size:clamp(1.5rem,2.6vw,2.1rem);margin:26px 0 6px}
+.member .role{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--red);display:block;margin-bottom:16px}
+.member p{color:var(--bone-dim);font-size:15.5px}
+.team-note{margin-top:clamp(60px,8vw,100px);border:1px solid var(--line);
+  padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start}
+.team-note .q{font-family:var(--font-serif);font-size:clamp(2.6rem,5vw,4rem);color:var(--red);line-height:.8}
+.team-note p{color:var(--bone-dim);max-width:75ch}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);text-align:center}
+.contact .h-display{font-size:clamp(2.6rem,8vw,6.4rem)}
+.contact .h-display em{font-style:normal;color:var(--red)}
+.contact .lede{margin:28px auto 0}
+.contact-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:44px}
+.contact-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;
+  margin-top:clamp(56px,8vw,90px)}
+.contact-meta a,.contact-meta span{font-family:var(--font-mono);font-size:13px;
+  letter-spacing:.12em;color:var(--bone-dim)}
+.contact-meta a:hover{color:var(--bone)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink)}
+.foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+.foot-legal{font-size:11.5px;line-height:1.7;color:var(--bone-faint);max-width:640px}
+.foot-brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.foot-brand img{width:auto;height:90px;object-fit:contain}
+.foot-privacy{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);transition:color .3s}
+.foot-privacy:hover{color:var(--red)}
+
+/* ---------- logo, tnf extras, book image ---------- */
+.stage-eco{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-top:5px}
+.tnf-cycle{margin-top:clamp(38px,5vw,58px);text-align:center;font-family:var(--font-serif);font-style:italic;font-size:clamp(1.15rem,2.3vw,1.55rem);color:var(--gold)}
+.tnf-cycle .cyc{display:inline-block;margin-right:12px;font-style:normal}
+.contact-logo{width:clamp(192px,28vw,280px);height:auto;margin:0 auto 30px}
+.book--img{padding:0;border:none;overflow:hidden}
+.book--img img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- reveals (JS enhanced) ---------- */
+[data-reveal]{will-change:transform,opacity}
+
+/* ---------- responsive ---------- */
+@media(max-width:1180px){.rail{display:none}}
+@media(max-width:980px){
+  .nav-links{display:none}
+  .menu-btn{display:flex}
+  .timecode{display:none}
+  .purpose-grid,.news-head,.theo-cta{grid-template-columns:1fr}
+  .big-one{font-size:clamp(8rem,30vw,14rem);justify-content:flex-start}
+  .work-row{grid-template-columns:1fr}
+  .work-row:nth-child(even) .work-media{order:0}
+  .lens-grid{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr}
+  .phone-wrap{margin-top:20px}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .photo-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .ph{grid-column:span 1!important;margin-top:0!important;aspect-ratio:3/4!important}
+  .ph-7,.ph-8{grid-column:span 2!important;aspect-ratio:16/11!important}
+  .lens-grid{grid-template-columns:1fr}
+  .stage{grid-template-columns:1fr;gap:10px}
+  .team-note{grid-template-columns:1fr}
+  .hero-meta{display:none}
+}
+/* ---------- reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .grain{display:none}
+  .intro-veil{display:none}
+}
+/* ---------- government / capabilities ---------- */
+.gov{background:var(--carbon)}
+.gov-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:14px}
+.gov-util{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:34px 0 0;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-faint)}
+.gov-util .vt{display:inline-flex;align-items:center;gap:9px;color:var(--bone-dim)}
+.gov-util .vt::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+.gov-util b{color:var(--bone-dim);font-weight:500}
+.gov-snap{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin:22px 0 0;background:var(--ink)}
+.gov-cell{padding:22px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gov-cell:nth-child(4n){border-right:0}
+.gov-cell .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-bottom:8px}
+.gov-cell .v{font-family:var(--font-head);font-weight:700;font-size:1.15rem;color:var(--bone);line-height:1.1}
+.gov-cell .v.ph{font-family:var(--font-mono);font-weight:500;font-size:.9rem;letter-spacing:.06em;color:var(--bone-dim)}
+.gov-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,5vw,64px);margin-top:clamp(40px,6vw,64px)}
+.gov-sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.gov-caps{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.gov-cap{background:var(--carbon);padding:22px}
+.gov-cap h4{font-family:var(--font-head);font-weight:700;font-size:1.08rem;margin-bottom:6px;line-height:1.12}
+.gov-cap p{font-size:13.5px;color:var(--bone-dim);line-height:1.55}
+.gov-code{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.gov-code .c{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--red);letter-spacing:.04em}
+.gov-code .d{font-size:14px;color:var(--bone-dim)}
+.gov-code .d .pri{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);padding:2px 7px;margin-left:8px;vertical-align:middle}
+.gov-note{font-family:var(--font-mono);font-size:11px;letter-spacing:.03em;color:var(--bone-faint);border-left:2px solid var(--red);padding:11px 15px;background:rgba(226,59,46,.05);line-height:1.7;margin-top:24px}
+.gov-poc{border:1px solid var(--line);background:var(--smoke)}
+.gov-poc .h{padding:14px 22px;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint)}
+.gov-poc .r{padding:13px 22px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:baseline}
+.gov-poc .r:last-child{border-bottom:0}
+.gov-poc .r .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-faint)}
+.gov-poc .r .v{font-size:14.5px;color:var(--bone)}
+.gov-poc .r .v.mono{font-family:var(--font-mono);font-size:12.5px;color:var(--bone-dim);letter-spacing:.06em}
+.gov-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px}
+@media(max-width:900px){.gov-snap{grid-template-columns:repeat(2,1fr)}.gov-cell:nth-child(2n){border-right:0}.gov-cols,.gov-caps{grid-template-columns:1fr}}
+@media(max-width:560px){.gov-snap{grid-template-columns:1fr}.gov-cell{border-right:0}}
+
+/* ---------- the turning toward (editorial methodology) ---------- */
+.turning-sec{background:var(--smoke);position:relative;overflow:hidden}
+.turn-byline{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint);margin-top:18px;line-height:1.9}
+.turn-intro{margin-top:clamp(38px,5vw,58px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px)}
+.turn-intro p{color:var(--bone-dim);font-size:16.5px;line-height:1.75;margin-bottom:16px}
+.turn-intro p:last-child{margin-bottom:0}
+.turn-intro strong{color:var(--bone);font-weight:600}
+.turn-contrast{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(40px,5vw,60px)}
+.tc{background:var(--smoke);padding:clamp(24px,3vw,34px)}
+.tc .lbl{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.tc.away .lbl{color:var(--bone-faint)}
+.tc.toward .lbl{color:var(--red)}
+.tc h3{font-family:var(--font-head);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.05;margin-bottom:10px}
+.tc.away h3{color:var(--bone-faint)}
+.tc.toward h3{color:var(--bone)}
+.tc p{font-size:14.5px;color:var(--bone-dim);line-height:1.65;max-width:44ch}
+.turns{margin-top:clamp(50px,7vw,84px);border-top:1px solid var(--line)}
+.turn{display:grid;grid-template-columns:70px 1fr;gap:clamp(18px,3vw,40px);padding:clamp(26px,3.4vw,40px) 0;border-bottom:1px solid var(--line);align-items:start}
+.turn .tn{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red);padding-top:9px}
+.turn-pair{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.turn-from{font-family:var(--font-mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-faint);text-decoration:line-through;text-decoration-color:rgba(226,59,46,.5)}
+.turn-arw{color:var(--red);font-size:15px;line-height:1}
+.turn-to{font-family:var(--font-head);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1;color:var(--bone)}
+.turn p{font-size:15px;color:var(--bone-dim);line-height:1.7;max-width:62ch}
+.turn-confess{margin-top:clamp(46px,6vw,70px);border-left:2px solid var(--gold);padding:6px 0 6px 26px;max-width:68ch}
+.turn-confess p{font-size:16px;color:var(--bone-dim);line-height:1.75}
+.turn-confess strong{color:var(--bone);font-weight:600}
+.turn-close{margin-top:clamp(56px,8vw,100px);text-align:center;padding-top:clamp(40px,5vw,60px);border-top:1px solid var(--line)}
+.turn-close .dotmark{width:9px;height:9px;border-radius:50%;background:var(--red);display:block;margin:0 auto 26px}
+.turn-close .q{font-family:var(--font-head);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.25;color:var(--bone);max-width:20ch;margin:0 auto}
+.turn-close .q em{font-style:normal;color:var(--red)}
+.turn-close .k{margin-top:26px;font-family:var(--font-head);font-weight:700;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.3;color:var(--bone)}
+@media(max-width:860px){.turn-intro,.turn-contrast{grid-template-columns:1fr}.turn{grid-template-columns:1fr;gap:8px}.turn .tn{padding-top:0}}
+
+</style>
+<meta name="theme-color" content="#fbf8f2">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://www.dot1.media/#organization",
+      "name": "Dot One Media",
+      "legalName": "DOT ONE LLC",
+      "alternateName": "Dot One Media Productions",
+      "url": "https://www.dot1.media/",
+      "logo": "https://static1.squarespace.com/static/6819574720c1f6179c83327f/t/6832bc0c76dffb04f9c184ed/1748155404206/New+Logo+WHT+on+BLK.png?format=500w",
+      "image": "https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/63a02ca4-7732-4b53-ba8b-f3402b3a20a1/DSC09831.jpg?format=1800w",
+      "description": "Dot One Media is a faith-driven, veteran-owned media production studio in Wasilla, Alaska, specializing in cinematography, photography, and strategic media. Home of the Theopoetecology framework and the Dot 1 News app.",
+      "slogan": "Create with purpose.",
+      "email": "contact@dot1.media",
+      "telephone": "+1-907-203-4993",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wasilla",
+        "addressRegion": "AK",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 61.5814,
+        "longitude": -149.4394
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Alaska" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "knowsAbout": ["Cinematography", "Photography", "Photojournalism", "Documentary Film", "Strategic Media", "Theopoetecology", "Faith-Driven Storytelling"],
+      "founder": [
+        { "@type": "Person", "@id": "https://www.dot1.media/#dennis", "name": "Dennis Matthews Jr.", "jobTitle": "Founder & Cinematographer" },
+        { "@type": "Person", "@id": "https://www.dot1.media/#brittany", "name": "Brittany Matthews", "jobTitle": "Creative Director & Photojournalist" }
+      ],
+      "sameAs": [
+        "https://news.dot1.media",
+        "https://instagram.com/dot1media",
+        "https://instagram.com/dot1photo",
+        "https://apps.apple.com/us/app/dot-1-news/id6757212352",
+        "https://www.amazon.com/dp/B0DHKRX55W",
+        "https://youtu.be/zMpii5i4c0s"
+      ],
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "name": "Book a session",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://dotonemedia.as.me/",
+          "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.dot1.media/#website",
+      "url": "https://www.dot1.media/",
+      "name": "Dot One Media",
+      "description": "Faith-driven cinematography, photography, and strategic media from Wasilla, Alaska.",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://www.dot1.media/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Dot 1 News",
+      "operatingSystem": "iOS",
+      "applicationCategory": "NewsApplication",
+      "url": "https://apps.apple.com/us/app/dot-1-news/id6757212352",
+      "description": "A declared lens, not a hidden one. Dot 1 News evaluates each story through a Christ-centered four-lens framework to help readers discern, not merely consume.",
+      "publisher": { "@id": "https://www.dot1.media/#organization" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "Book",
+      "name": "Theopoetecology: Where God, Creativity, and the Living Earth Converge",
+      "author": { "@id": "https://www.dot1.media/#dennis" },
+      "url": "https://www.amazon.com/dp/B0DHKRX55W",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://www.dot1.media/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.dot1.media/#video-graceandgrit",
+      "name": "Grace + Grit",
+      "description": "Full-stack YouTube production with photography, graphic animation, and original music composition, engineered from concept to final cut to direct hearts toward God. A Dot One Media production.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/ZWZ4mo51cnc/maxresdefault.jpg",
+      "uploadDate": "2025-01-01",
+      "contentUrl": "https://youtu.be/ZWZ4mo51cnc",
+      "embedUrl": "https://www.youtube.com/embed/ZWZ4mo51cnc",
+      "publisher": { "@id": "https://www.dot1.media/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.dot1.media/#video-akveteransmuseum",
+      "name": "Alaska Veterans Museum",
+      "description": "An ongoing documentary series produced for the Alaska Veterans Museum in Anchorage, preserving the stories of those who served. Filmed on location to honor the mission: remember, honor, educate, inspire.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/CmZXqs7--SU/maxresdefault.jpg",
+      "uploadDate": "2025-01-01",
+      "contentUrl": "https://youtu.be/CmZXqs7--SU",
+      "embedUrl": "https://www.youtube.com/embed/CmZXqs7--SU",
+      "publisher": { "@id": "https://www.dot1.media/#organization" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.dot1.media/#video-theopoetecology",
+      "name": "Theopoetecology: The Video Series",
+      "description": "A twelve-episode video course walking through the Theopoetecology framework by Dennis Matthews Jr., where God, creativity, and the living earth converge.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/zMpii5i4c0s/maxresdefault.jpg",
+      "uploadDate": "2025-01-01",
+      "contentUrl": "https://youtu.be/zMpii5i4c0s",
+      "embedUrl": "https://www.youtube.com/embed/zMpii5i4c0s",
+      "publisher": { "@id": "https://www.dot1.media/#organization" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="intro-veil" aria-hidden="true"><span class="veil-bloom"></span><span class="veil-dot"></span></div>
+
+<!-- gateway rail -->
+<aside class="rail" aria-hidden="true">
+  <span class="rail-label" id="railLabel">The Gateway</span>
+  <div class="rail-track"><span class="rail-dot" id="railDot"></span></div>
+</aside>
+
+<!-- nav -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Dot One Media home"><img data-slot="logoNav" src="images/DotOneMediaLogoAnimation.gif" alt="Dot One Media"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#photography">Photography</a>
+      <a href="#government">Government</a>
+      <a href="#theopoetecology">Theopoetecology</a>
+      <a href="#news">Dot 1 News</a>
+      <a href="#team">Team</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:22px">
+      <span class="timecode"><span class="rec"></span><span id="tc">TC 00:00:00:00</span></span>
+      <a class="nav-cta" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener">Start a project</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#work">Work</a>
+  <a href="#photography">Photography</a>
+  <a href="#government">Government</a>
+  <a href="#theopoetecology">Theopoetecology</a>
+  <a href="#news">Dot 1 News</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Contact</a>
+  <span class="mono-note">Wasilla, Alaska · Create with purpose.</span>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Dot One Media">
+  <div class="container">
+    <h1 class="hero-title" id="heroTitle">
+      <span class="word"><span>Dot&nbsp;One</span></span>
+      <span class="word"><span>Media<em class="end-dot">.</em></span></span>
+    </h1>
+    <div class="hero-sub">
+      <p class="hero-tag">Create with purpose.</p>
+      <p class="hero-rotator" aria-live="polite"><span id="rotator">Shining light into the darkness</span></p>
+    </div>
+    <div class="hero-meta">
+      <span class="mono-note">61.58° N · 149.44° W</span>
+      <span class="mono-note">Wasilla, Alaska</span>
+      <span class="mono-note">Cinematography · Photography · Strategic Media</span>
+    </div>
+    <div class="hero-frame">
+      <img id="heroImg" data-slot="hero" data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/63a02ca4-7732-4b53-ba8b-f3402b3a20a1/DSC09831.jpg?format=1800w" alt="Alaska landscape captured by Dot One Media" fetchpriority="high">
+      <span class="img-tag">Alaska, through our lens</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <p>Cinematography<em>•</em>Photography<em>•</em>Strategic Media<em>•</em>Faith-Driven Storytelling<em>•</em>Theopoetecology<em>•</em>Dot 1 News<em>•</em></p>
+    <p>Cinematography<em>•</em>Photography<em>•</em>Strategic Media<em>•</em>Faith-Driven Storytelling<em>•</em>Theopoetecology<em>•</em>Dot 1 News<em>•</em></p>
+  </div>
+</div>
+
+<!-- ============ PURPOSE / WHY .1 ============ -->
+<section class="purpose section-pad" id="purpose">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>Why “Dot One”</p>
+    <div class="purpose-grid">
+      <div class="big-one" data-reveal aria-hidden="true"><span class="p-dot" id="purposeDot"></span><span>1</span></div>
+      <div class="purpose-copy">
+        <h2 class="h-serif" data-reveal>A beginning, and a bridge.</h2>
+        <p data-reveal>Like the gateway address that connects every device on a network, Dot One exists to connect hearts to their Creator. The <span class="gold">.1</span> is also the tithe, the first portion given back, a reminder that everything we produce is first and foremost for His glory.</p>
+        <p data-reveal>We are a veteran-owned studio in Wasilla, Alaska, telling stories that guide people back to God through craft, creativity, and truth.</p>
+      </div>
+    </div>
+
+    <div class="mission-lines">
+      <div class="mission-line" data-reveal><span class="idx">01</span><span class="txt">Shining light into the darkness</span></div>
+      <div class="mission-line" data-reveal><span class="idx">02</span><span class="txt">Exposing the hidden</span></div>
+      <div class="mission-line" data-reveal><span class="idx">03</span><span class="txt">Giving a voice to the mute</span></div>
+      <div class="mission-line" data-reveal><span class="idx">04</span><span class="txt">Directing people to God</span></div>
+    </div>
+
+    <div class="purpose-img" data-reveal>
+      <img data-plx data-slot="purposeImage" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/2d3e1b99-0e88-45e4-b5fe-29963c938e48/Preview-11.jpeg?format=1500w" alt="Dot One Media cinematographer carrying a camera rig on his shoulder in the Alaskan outdoors" loading="lazy">
+      <span class="img-tag">On location · Alaska</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / CINEMATOGRAPHY ============ -->
+<section class="work section-pad" id="work">
+  <div class="container">
+    <div class="work-head">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dotmark"></span>Selected Work</p>
+        <h2 class="h-display" data-reveal>One story<br>at a time</h2>
+      </div>
+      <div data-reveal>
+        <p class="lede" style="max-width:44ch">Documentary-style cinematography built frame by frame, with sound design, dynamic lighting, and meticulous post-production in every cut.</p>
+        <div class="services-list">
+          <span>Corporate &amp; documentary film</span>
+          <span>YouTube production</span>
+          <span>Original music &amp; sound</span>
+          <span>Post-production</span>
+          <span>Strategic media</span>
+        </div>
+      </div>
+    </div>
+
+    <article class="work-row" data-reveal>
+      <div class="work-media" data-plx-wrap>
+        <img data-plx data-slot="work1" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/c08c5ed6-caf5-490e-ac4e-6a18cf142001/DT1_0384.jpg?format=1500w" alt="Still frame from The Narrow Gate, a Dot One Media production" loading="lazy">
+      </div>
+      <div class="work-info">
+        <span class="work-num">PROJECT / 01</span>
+        <h3>The Narrow Gate</h3>
+        <p>Corporate documentary-style cinematography, crafted with precision. Immersive sound, deliberate lighting, and thoughtful set design transform an idea into a visual experience that connects and inspires.</p>
+        <a class="btn" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener"><span class="b-dot"></span>Book this style</a>
+      </div>
+    </article>
+
+    <article class="work-row" data-reveal>
+      <div class="work-media">
+        <button class="yt-facade" data-yt="ZWZ4mo51cnc" data-yt-key="work2Youtube" aria-label="Play the Grace and Grit video">
+          <img src="https://i.ytimg.com/vi/ZWZ4mo51cnc/hqdefault.jpg" alt="Grace and Grit, a Dot One Media production" loading="lazy">
+          <span class="play-btn" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="work-info">
+        <span class="work-num">PROJECT / 02</span>
+        <h3>Grace + Grit</h3>
+        <p>Full-stack YouTube production with stunning photography, graphic animation, and original music composition, engineered from concept to final cut to captivate an audience and direct hearts toward God.</p>
+        <a class="btn" data-yt-key="work2Youtube" href="https://youtu.be/ZWZ4mo51cnc" target="_blank" rel="noopener"><span class="b-dot"></span>Watch on YouTube</a>
+      </div>
+    </article>
+
+    <article class="work-row" data-reveal>
+      <div class="work-media">
+        <button class="yt-facade" data-yt="CmZXqs7--SU" data-yt-key="avmYoutube" aria-label="Play the Alaska Veterans Museum film">
+          <img src="https://i.ytimg.com/vi/CmZXqs7--SU/maxresdefault.jpg" alt="Alaska Veterans Museum, a Dot One Media production" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/CmZXqs7--SU/hqdefault.jpg'">
+          <span class="play-btn" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="work-info">
+        <span class="work-num">PROJECT / 03</span>
+        <h3>Alaska Veterans Museum</h3>
+        <p>An ongoing documentary series produced for the Alaska Veterans Museum in Anchorage, preserving the stories of those who served. Filmed on location, cut to honor the mission: remember, honor, educate, inspire.</p>
+        <a class="btn" data-yt-key="avmYoutube" href="https://youtu.be/CmZXqs7--SU" target="_blank" rel="noopener"><span class="b-dot"></span>Watch on YouTube</a>
+      </div>
+    </article>
+
+    <article class="work-row" data-reveal>
+      <div class="work-media" data-plx-wrap>
+        <img data-plx data-slot="work4" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/f6ada140-f271-4b49-9ee2-7a97806da9c6/DOT_2425.png?format=1500w" alt="A subject stands by a rocky riverbank gazing at a waterfall, a Dot One Media production still" loading="lazy">
+      </div>
+      <div class="work-info">
+        <span class="badge-soon">In development</span>
+        <span class="work-num">PROJECT / 04</span>
+        <h3>Short Films &amp; Documentary</h3>
+        <p>Multiple inspiring projects are in the works. Powerful short films and documentaries built to illuminate stories with purpose, and to uplift through the light of faith. Stay tuned.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PHOTOGRAPHY ============ -->
+<section class="photo section-pad" id="photography">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>Photography</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+      <h2 class="h-display" data-reveal>Timeless<br>portraits, Alaska</h2>
+      <p class="lede" data-reveal style="max-width:42ch">Every stage of life, every season of light, portraits that build a legacy, from a child's first steps to the wisdom of old age.</p>
+    </div>
+
+    <div class="photo-grid" id="photoGrid">
+      <figure class="ph ph-1" data-reveal data-cap="Official portrait · Alaska"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/588d342d-6e27-4580-83e5-b23fbb833839/Brianna%27sMaternitySession-77.jpg?format=1200w" alt="Official portrait of a three-star U.S. Air Force lieutenant general, photographed by Dot One Media in Alaska" loading="lazy"></figure>
+      <figure class="ph ph-2" data-reveal data-cap="Family session"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/7edafe89-bac8-4ec3-a1ab-9764ec902f55/WiltseFamily-102.jpg?format=1200w" alt="Family portrait session by Dot One Media" loading="lazy"></figure>
+      <figure class="ph ph-3" data-reveal data-cap="Portrait · Alaska"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/2365ab7c-3655-4f19-b466-1e907c2fe61b/Previews-22.jpg?format=1000w" alt="Studio portrait session in Wasilla, Alaska by Dot One Media" loading="lazy"></figure>
+      <figure class="ph ph-4" data-reveal data-cap="Family session"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/50a98689-108a-4de6-8edb-427fe3daaed7/NeffFamily-9.jpg?format=1000w" alt="Family portrait outdoors in Alaska" loading="lazy"></figure>
+      <figure class="ph ph-5" data-reveal data-cap="Family session"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/dfb73bc8-d04b-4a30-9c34-99ec021e0e7a/FloodFamily-79.jpg?format=1200w" alt="Family portrait session in the Alaskan landscape" loading="lazy"></figure>
+      <figure class="ph ph-6" data-reveal data-cap="Family session"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/95123221-c3fa-4b65-b9f6-cbf204c41d0c/NeffFamily-38.jpg?format=1000w" alt="Candid family moment photographed by Dot One Media" loading="lazy"></figure>
+      <figure class="ph ph-7" data-reveal data-cap="Military ceremony · Alaska"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/fe80a931-b6a0-436b-b526-1574e03e195e/AlexMotherDayMini%282024%29-19.jpg?format=1200w" alt="Military flag detail during a ceremony in Alaska, photographed by Dot One Media" loading="lazy"></figure>
+      <figure class="ph ph-8" data-reveal data-cap="Senior session"><img data-plx src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/46e3a24a-6b72-4b6c-9406-d2e0fc406d37/SeniorMini-76.jpg?format=1200w" alt="High school senior portrait session in Wasilla, Alaska by Dot One Media" loading="lazy"></figure>
+    </div>
+
+    <div class="photo-cta" data-reveal>
+      <a class="btn" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener"><span class="b-dot"></span>Book a session</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GOVERNMENT & COMMERCIAL ============ -->
+<section class="gov section-pad" id="government">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>Government &amp; Commercial</p>
+    <div class="gov-head">
+      <h2 class="h-display" data-reveal>Federal-ready.<br>Business-trusted.</h2>
+      <p class="lede" data-reveal style="max-width:44ch">A veteran-owned studio bringing broadcast-grade video, photography, and motion media to government agencies, prime contractors, and businesses, with the discipline and reliability the work demands.</p>
+    </div>
+
+    <div class="gov-util" data-reveal>
+      <span class="vt">Veteran-Owned Small Business</span>
+      <span>UEI <b data-fill="uei">R3MTPRVZ9L42</b></span>
+      <span>CAGE <b data-fill="cage">Pending</b></span>
+      <span>SAM.gov <b data-fill="sam">Registration in progress</b></span>
+    </div>
+
+    <div class="gov-snap" data-reveal>
+      <div class="gov-cell"><div class="k">Unique Entity ID</div><div class="v" data-fill="uei">R3MTPRVZ9L42</div></div>
+      <div class="gov-cell"><div class="k">CAGE Code</div><div class="v ph" data-fill="cage">Pending</div></div>
+      <div class="gov-cell"><div class="k">Primary NAICS</div><div class="v">512110</div></div>
+      <div class="gov-cell"><div class="k">Business Size</div><div class="v">Small</div></div>
+      <div class="gov-cell"><div class="k">Socioeconomic</div><div class="v">Veteran-Owned</div></div>
+      <div class="gov-cell"><div class="k">Established</div><div class="v ph" data-fill="est">Pending</div></div>
+      <div class="gov-cell"><div class="k">Location</div><div class="v">Wasilla, AK</div></div>
+      <div class="gov-cell"><div class="k">Availability</div><div class="v">Nationwide</div></div>
+    </div>
+
+    <div class="gov-cols">
+      <div>
+        <p class="gov-sub" data-reveal>Core Capabilities</p>
+        <div class="gov-caps" data-reveal>
+          <div class="gov-cap"><h4>Documentary &amp; Cinematography</h4><p>Long- and short-form documentary, interviews, and field cinematography on cinema-grade sensors.</p></div>
+          <div class="gov-cap"><h4>Photography &amp; Photojournalism</h4><p>Editorial, event, portrait, and operational photography for publication and archive.</p></div>
+          <div class="gov-cap"><h4>Motion Graphics &amp; Animation</h4><p>Titles, data visualization, and animated explainers for briefings and communication.</p></div>
+          <div class="gov-cap"><h4>Aerial &amp; UAS Capture</h4><p>Aerial cinematography and photography for site, property, and event coverage. FAA Part 107 certification in progress.</p></div>
+          <div class="gov-cap"><h4>Post-Production &amp; Color</h4><p>Editing, sound, and DaVinci Resolve finishing to broadcast delivery specifications.</p></div>
+          <div class="gov-cap"><h4>Events &amp; Training Media</h4><p>Ceremonies, official events, and instructional media, multi-camera where required.</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="gov-sub" data-reveal>NAICS &amp; PSC Codes</p>
+        <div data-reveal>
+          <div class="gov-code"><span class="c">512110</span><span class="d">Motion Picture &amp; Video Production<span class="pri">Primary</span></span></div>
+          <div class="gov-code"><span class="c">541922</span><span class="d">Commercial Photography</span></div>
+          <div class="gov-code"><span class="c">512191</span><span class="d">Teleproduction &amp; Postproduction</span></div>
+          <div class="gov-code"><span class="c">541430</span><span class="d">Graphic Design Services</span></div>
+          <div class="gov-code"><span class="c">T011</span><span class="d">Photographic, Mapping &amp; Publication (PSC)</span></div>
+          <div class="gov-code"><span class="c">T012</span><span class="d">Video / Motion Picture Production (PSC)</span></div>
+        </div>
+        <p class="gov-note" data-reveal>SAM.gov registration is in progress. Codes shown are standard for our services and will be confirmed on our entity record upon completion.</p>
+      </div>
+    </div>
+
+    <div class="gov-cols" style="align-items:start">
+      <div>
+        <p class="gov-sub" data-reveal>How to Work With Us</p>
+        <p data-reveal style="color:var(--bone-dim);font-size:15px;line-height:1.65;max-width:52ch">We're available for direct award (micro-purchase and simplified acquisition), as a production partner to prime contractors, and for consideration under veteran small-business set-asides. Reach out for our full capability statement and past-performance references.</p>
+        <div class="gov-cta" data-reveal>
+          <a class="btn" href="mailto:contact@dot1.media?subject=Capability%20Statement%20Request"><span class="b-dot"></span>Request Capability Statement</a>
+        </div>
+      </div>
+      <div class="gov-poc" data-reveal>
+        <div class="h">Point of Contact</div>
+        <div class="r"><span class="k">Name</span><span class="v">Dennis Matthews Jr.</span></div>
+        <div class="r"><span class="k">Title</span><span class="v">Founder &amp; Principal</span></div>
+        <div class="r"><span class="k">Email</span><span class="v"><a href="mailto:contact@dot1.media" class="link-underline">contact@dot1.media</a></span></div>
+        <div class="r"><span class="k">Phone</span><span class="v mono">907 · 712 · 4890</span></div>
+        <div class="r"><span class="k">UEI</span><span class="v mono" data-fill="uei">R3MTPRVZ9L42</span></div>
+        <div class="r"><span class="k">CAGE</span><span class="v mono" data-fill="cage">Pending</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THEOPOETECOLOGY ============ -->
+<section class="theo section-pad" id="theopoetecology">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>An original framework</p>
+    <div class="theo-head">
+      <h2 class="h-serif" data-reveal>Theopoetecology. Where God, creativity, and the <em>living earth</em> converge.</h2>
+      <p class="lede" data-reveal>An interdisciplinary framework developed by Dennis Matthews Jr. Its thesis: divine meaning flows, the way rain flows through soil, through a living ecosystem of scripture, ecological imagery, poetic language, cultural narrative, and lived experience.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar" data-reveal>
+        <span class="gk">Θεός · Theos</span>
+        <h4>God</h4>
+        <p>Theological reflection, the recognition of divine meaning and the human act of being formed by it.</p>
+      </div>
+      <div class="pillar" data-reveal>
+        <span class="gk">Ποίησις · Poiesis</span>
+        <h4>Making</h4>
+        <p>The creative act, where imagination, aesthetic form, and embodiment become constitutive of theological knowledge.</p>
+      </div>
+      <div class="pillar" data-reveal>
+        <span class="gk">Οἶκος · Oikos</span>
+        <h4>Dwelling</h4>
+        <p>The household of creation, the root of ecology itself, where the natural world actively participates in meaning-making.</p>
+      </div>
+    </div>
+
+    <div class="tnf" id="tnf">
+      <div class="tnf-intro">
+        <h3 class="h-serif" data-reveal style="font-size:clamp(1.8rem,3.6vw,2.8rem)">The Narrative Form</h3>
+        <p class="mono-note" data-reveal>Not “what will happen?” but “who is becoming?” Five stages of ecological maturation, organized around formation rather than conflict.</p>
+      </div>
+
+      <div class="stage stage-seed" data-reveal data-stage="#eaf0dc">
+        <span class="stage-num">STAGE 01<span class="stage-eco">Germination</span></span>
+        <div><h4>Seed</h4><p>A calling, question, crisis, or symbolic image that generates the narrative, small yet containing the potential for the entire arc. Divine initiative; the kingdom in its smallest form.</p></div>
+      </div>
+      <div class="stage stage-root" data-reveal data-stage="#f0eadc">
+        <span class="stage-num">STAGE 02<span class="stage-eco">Underground</span></span>
+        <div><h4>Root</h4><p>Internal struggle, grounding, and unseen formation beneath the surface, the invisible work that makes visible transformation possible. The desert period most narrative models have no category for.</p></div>
+      </div>
+      <div class="stage stage-growth" data-reveal data-stage="#edf2d9">
+        <span class="stage-num">STAGE 03<span class="stage-eco">Emergence</span></span>
+        <div><h4>Growth</h4><p>Transformation becomes visible through conflict, movement, exploration, and outward change. Usually the most expansive phase of the narrative.</p></div>
+      </div>
+      <div class="stage stage-fruit" data-reveal data-stage="#f7efd3">
+        <span class="stage-num">STAGE 04<span class="stage-eco">Ripening</span></span>
+        <div><h4>Fruit</h4><p>The visible outcome, whether realization, reconciliation, wisdom, redemption, or sacrifice. Meaning made tangible, shareable, and formative.</p></div>
+      </div>
+      <div class="stage stage-harvest" data-reveal data-stage="#f8edcb">
+        <span class="stage-num">STAGE 05<span class="stage-eco">Generativity</span></span>
+        <div><h4>Harvest</h4><p>The story extends beyond itself, into community, generation, and the planting of new seeds for new narratives. The stage conflict-driven models don't have.</p></div>
+      </div>
+
+      <p class="tnf-cycle" data-reveal><span class="cyc">⟳</span>Harvest produces Seed. The form is cyclical, and the story ends with a new beginning.</p>
+    </div>
+
+    <div class="theo-cta">
+      <div class="book" data-reveal aria-hidden="true">
+        <span class="b-dotone"></span>
+        <div>
+          <h5>Theopoetecology</h5>
+          <p class="b-sub">Where God, Creativity, and the Living Earth Converge</p>
+        </div>
+        <span class="b-auth">Dennis Matthews Jr.</span>
+      </div>
+      <div class="theo-cta-copy">
+        <h3 data-reveal>Read it. Watch it. Live it.</h3>
+        <p data-reveal>The full framework unfolds across six parts and sixteen chapters, with original poetry woven throughout, written for serious general readers and scholars alike. A twelve-episode video course walks the same ground on screen.</p>
+        <div class="cta-row" data-reveal>
+          <a class="btn btn--gold" href="https://a.co/d/0iHgoGKq" target="_blank" rel="noopener"><span class="b-dot"></span>Get the book</a>
+          <a class="btn" data-yt-key="youtubeId" href="https://youtu.be/zMpii5i4c0s" target="_blank" rel="noopener"><span class="b-dot"></span>Watch the series</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOT 1 NEWS ============ -->
+<section class="news section-pad" id="news">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>Read daily at news.dot1.media</p>
+    <div class="news-head">
+      <div class="news-copy">
+        <h2 class="news-title" data-reveal><span class="l1">A declared lens,</span><br><span class="l2">not a hidden one.</span></h2>
+        <p data-reveal>Dot 1 News exists to help readers <strong>discern</strong>, not merely consume. In a digital world driven by speed, outrage, and endless reaction, we believe news should form wisdom, not fatigue.</p>
+        <p data-reveal>We don't aim to cover everything. We aim to cover what <em>matters</em>, with every story evaluated through a Christ-centered framework built to honor truth, human dignity, and long-term cultural responsibility.</p>
+        <div class="appstore-row" data-reveal>
+          <img class="app-icon" data-slot="appIcon" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/8c3177dd-95f3-4a28-bd61-cd2e5f0ef5ca/Untitled-1-red.png?format=300w" alt="Dot 1 News app icon">
+          <a class="appstore-link" href="https://apps.apple.com/us/app/dot-1-news/id6757212352" target="_blank" rel="noopener" aria-label="Download Dot 1 News on the App Store"><img class="appstore-badge" data-slot="appStoreBadge" src="images/AppStore.png" alt="Download on the App Store"></a>
+          <a class="read-online" href="https://news.dot1.media" target="_blank" rel="noopener">Read today's edition</a>
+        </div>
+      </div>
+      <div class="phone-wrap" data-reveal>
+        <div class="phone-glow" aria-hidden="true"></div>
+        <div>
+          <div class="phone">
+            <div class="phone-screen" id="phoneScreen">
+              <img class="active" data-slot="screen1" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/87508fb2-0f5a-42b7-ad2e-91f31349348e/01.png?format=800w" alt="Dot 1 News app, featured articles screen">
+              <img data-slot="screen2" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/f18bc63f-49c2-493e-bb69-29d3373ffd07/02.png?format=800w" alt="Dot 1 News app, article view">
+              <img data-slot="screen3" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/2e450caa-79b2-4678-b1bf-d30475586ddd/03.png?format=800w" alt="Dot 1 News app, lens scoring view">
+            </div>
+          </div>
+          <div class="phone-dots" id="phoneDots" role="tablist" aria-label="App screenshots">
+            <button class="active" aria-label="Screenshot 1"></button>
+            <button aria-label="Screenshot 2"></button>
+            <button aria-label="Screenshot 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lens-block">
+      <div class="lens-intro">
+        <h3 class="h-display" data-reveal style="font-size:clamp(1.8rem,4vw,3rem)">The four-lens<br>curation model</h3>
+        <p class="mono-note" data-reveal style="max-width:40ch">Each story is scored through four lenses for context, not control. The numbers are tools for orientation, not judgments.</p>
+      </div>
+      <div class="lens-grid">
+        <div class="lens" data-reveal>
+          <svg class="lens-ring" viewBox="0 0 76 76" aria-hidden="true">
+            <circle class="ring-bg" cx="38" cy="38" r="33"/>
+            <circle class="ring-fg" cx="38" cy="38" r="33"/>
+            <text x="38" y="43" text-anchor="middle">01</text>
+          </svg>
+          <h4>Biblical Alignment</h4>
+          <p>Does a story affirm, distort, or challenge God's moral order as revealed in Scripture? Every story is examined honestly in light of biblical truth.</p>
+        </div>
+        <div class="lens" data-reveal>
+          <svg class="lens-ring" viewBox="0 0 76 76" aria-hidden="true">
+            <circle class="ring-bg" cx="38" cy="38" r="33"/>
+            <circle class="ring-fg" cx="38" cy="38" r="33"/>
+            <text x="38" y="43" text-anchor="middle">02</text>
+          </svg>
+          <h4>Prophetic Significance</h4>
+          <p>Looking beyond isolated events to the broader social, technological, cultural, and moral patterns that Scripture warns about or illuminates.</p>
+        </div>
+        <div class="lens" data-reveal>
+          <svg class="lens-ring" viewBox="0 0 76 76" aria-hidden="true">
+            <circle class="ring-bg" cx="38" cy="38" r="33"/>
+            <circle class="ring-fg" cx="38" cy="38" r="33"/>
+            <text x="38" y="43" text-anchor="middle">03</text>
+          </svg>
+          <h4>Source Credibility</h4>
+          <p>Transparent reporting, institutional accountability, verifiable facts. Narrative is distinguished from reporting, and bias is acknowledged, not hidden.</p>
+        </div>
+        <div class="lens" data-reveal>
+          <svg class="lens-ring" viewBox="0 0 76 76" aria-hidden="true">
+            <circle class="ring-bg" cx="38" cy="38" r="33"/>
+            <circle class="ring-fg" cx="38" cy="38" r="33"/>
+            <text x="38" y="43" text-anchor="middle">04</text>
+          </svg>
+          <h4>Humanities Impact</h4>
+          <p>How stories shape people over time in dignity, identity, relationships, and moral formation, not just public opinion.</p>
+        </div>
+      </div>
+
+      <div class="news-quote" data-reveal>
+        <p>"To help readers <strong>see clearly</strong>, think deeply, and remain anchored."</p>
+        <span class="mono-note">Speed is easy. Wisdom is costly.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE TURNING TOWARD ============ -->
+<section class="turning-sec section-pad" id="turning">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>The Editorial Foundation of Dot 1 News</p>
+    <h2 class="h-display" data-reveal>The Turning<br>Toward</h2>
+    <p class="turn-byline" data-reveal>A Methodology for Christ-Centered Strategic Media<br>Dennis Matthews Jr. · Brittany Marie Matthews</p>
+
+    <div class="turn-intro">
+      <div data-reveal>
+        <p>Journalism was born as a covenant, not a commodity. It existed to make the powerful accountable to the powerless. It was witness in service of the governed, a way for a citizen to know what they could not personally see, so that they might act as a free and responsible moral agent.</p>
+        <p>When attention became the product, the covenant inverted. The reader ceased to be the one served and became the thing sold. Information stopped serving discernment and began manufacturing reaction.</p>
+      </div>
+      <div data-reveal>
+        <p>We name this dominant paradigm <strong>diversion</strong>, the movement of attention away. Not merely distraction, but a directed pull: away from the true toward the inflammatory, away from the neighbor toward the enemy, away from the durable toward the urgent but empty.</p>
+        <p>Diversion is not a failure of modern media. It is, increasingly, its design.</p>
+      </div>
+    </div>
+
+    <div class="turn-contrast">
+      <div class="tc away" data-reveal>
+        <p class="lbl">The dominant paradigm</p>
+        <h3>Diversion</h3>
+        <p>The turning of attention away. It asks: what will hold the eye?</p>
+      </div>
+      <div class="tc toward" data-reveal>
+        <p class="lbl">Our answer</p>
+        <h3>Conversion</h3>
+        <p>A turning toward. It asks: what is worthy of a person's limited and sacred attention?</p>
+      </div>
+    </div>
+
+    <div class="turns">
+      <div class="turn" data-reveal>
+        <span class="tn">01</span>
+        <div>
+          <div class="turn-pair"><span class="turn-from">Reaction</span><span class="turn-arw">→</span><span class="turn-to">Reflection</span></div>
+          <p>The diversionary medium rewards the fastest, hottest response. We deliberately slow the reader down with measured headlines and a refusal of the jolt. We ask not how this makes you feel in the next three seconds, but what it means, and what it asks of you.</p>
+        </div>
+      </div>
+      <div class="turn" data-reveal>
+        <span class="tn">02</span>
+        <div>
+          <div class="turn-pair"><span class="turn-from">Spectacle</span><span class="turn-arw">→</span><span class="turn-to">Dignity</span></div>
+          <p>Diversion reduces persons to content: the villain to hate, the victim to consume. We hold that every person in every story bears the image of God, including the ones the reader is invited to despise. Contempt is a form of blindness.</p>
+        </div>
+      </div>
+      <div class="turn" data-reveal>
+        <span class="tn">03</span>
+        <div>
+          <div class="turn-pair"><span class="turn-from">Fragment</span><span class="turn-arw">→</span><span class="turn-to">Frame</span></div>
+          <p>The feed delivers the world as disconnected shocks, each erasing the last. We supply context, the reason it matters now, and what still remains unknown, restoring to the fragment the frame that makes it intelligible. A fact without a frame is not information. It is ammunition.</p>
+        </div>
+      </div>
+      <div class="turn" data-reveal>
+        <span class="tn">04</span>
+        <div>
+          <div class="turn-pair"><span class="turn-from">Noise</span><span class="turn-arw">→</span><span class="turn-to">Signal</span></div>
+          <p>Not everything true is worth your attention today. Curation is a moral act. We select for the consequential, the dignifying, and the formative, and we refuse the sensational but empty, even when it would perform. Restraint is our signature.</p>
+        </div>
+      </div>
+      <div class="turn" data-reveal>
+        <span class="tn">05</span>
+        <div>
+          <div class="turn-pair"><span class="turn-from">Information</span><span class="turn-arw">→</span><span class="turn-to">Revelation</span></div>
+          <p>We do not stop at what happened. Through the confessed lens, we invite the reader past information toward revelation, the drawing back of the curtain on what a story discloses about the world, the neighbor, and God. We end not with a verdict, but a question the reader can carry.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="turn-confess" data-reveal>
+      <p>There is no neutral witness, and pretending otherwise is itself a deception. All witness is confessed witness, and the honest course is not to hide the standpoint but to declare it. We name where we stand, do the disciplined work of measured and verifiable reporting, and then serve the reader's own discernment rather than commanding their conclusion. <strong>We are not building an audience to sell. We are forming a reader to free.</strong></p>
+    </div>
+
+    <div class="turn-close" data-reveal>
+      <span class="dotmark"></span>
+      <p class="q">The <em>dot</em> is the point of light.<br>The <em>one</em> is the singular truth.</p>
+      <p class="k">We do not chase the eye.<br>We turn it toward the light.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="team section-pad" id="team">
+  <div class="container">
+    <p class="eyebrow" data-reveal><span class="dotmark"></span>The studio</p>
+    <h2 class="h-display" data-reveal>Veterans.<br>Scholars. Storytellers.</h2>
+
+    <div class="team-grid">
+      <article class="member" data-reveal>
+        <div class="member-img"><img data-slot="teamDennis" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/408eb4e3-2d4e-4203-9078-b44315680c3b/ZaddyFall2025-29.jpeg?format=1200w" alt="Dennis Matthews Jr. seated on a rock with his camera in a fall Alaska landscape" loading="lazy"></div>
+        <h3>Dennis Matthews Jr.</h3>
+        <span class="role">Founder · Cinematographer · Strategic Media</span>
+        <p>Devoted husband, father, and visionary whose purpose-driven creativity bridges faith, intellect, and artistry. A veteran and scholar, Dennis uses storytelling, technology, and strategic communication to reveal God's presence in modern culture, building not for recognition, but for redemption.</p>
+      </article>
+      <article class="member" data-reveal>
+        <div class="member-img"><img data-slot="teamBrittany" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/950f5f5f-e331-48cc-bab9-c9101feaab8f/me2025-29.jpeg?format=1200w" alt="Brittany Matthews photographing outdoors near a lake with mountains in the background" loading="lazy"></div>
+        <h3>Brittany Matthews</h3>
+        <span class="role">Creative Director · Photojournalist</span>
+        <p>A proud veteran, devoted mother, and passionate scholar whose strength and compassion shine through every frame. Through her lens, Brittany tells stories that celebrate family, faith, and the fleeting magic of time, moments families cherish for generations.</p>
+      </article>
+    </div>
+
+    <div class="team-note" data-reveal>
+      <span class="q" aria-hidden="true">"</span>
+      <p>Yes, we travel. Whether you're launching a business, transforming a hobby, or unveiling a creative project, we're ready to journey with you, in Alaska and beyond. Need a second or third camera operator? We do that too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <img class="contact-logo" data-slot="logoContact" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/20bcbcb5-6229-47b7-a31e-a682369f757a/Dot+Media_Logo+Animation+3.gif?format=800w" alt="Dot One Media animated logo" loading="lazy">
+    <p class="eyebrow" data-reveal style="justify-content:center"><span class="dotmark"></span>Start something</p>
+    <h2 class="h-display" data-reveal>Let's create<br>with <em>purpose</em><span style="color:var(--red)">.</span></h2>
+    <p class="lede" data-reveal style="text-align:center">Your story deserves to be told. Tell us where it begins.</p>
+    <div class="contact-actions" data-reveal>
+      <a class="btn btn--gold" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener"><span class="b-dot"></span>Schedule a session</a>
+      <a class="btn" href="mailto:contact@dot1.media"><span class="b-dot"></span>contact@dot1.media</a>
+      <a class="btn" href="tel:+19072034993"><span class="b-dot"></span>907·203·4993</a>
+    </div>
+    <div class="contact-meta" data-reveal>
+      <span>Wasilla, Alaska · USA</span>
+      <a class="link-underline" href="https://instagram.com/dot1media" target="_blank" rel="noopener">Instagram · @dot1media</a>
+      <a class="link-underline" href="https://instagram.com/dot1photo" target="_blank" rel="noopener">Instagram · @dot1photo</a>
+      <a class="link-underline" href="https://apps.apple.com/us/app/dot-1-news/id6757212352" target="_blank" rel="noopener">Dot 1 News · App Store</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-brand">
+      <img data-slot="logoFooter" src="https://static1.squarespace.com/static/6819574720c1f6179c83327f/t/6832bc0c76dffb04f9c184ed/1748155404206/New+Logo+WHT+on+BLK.png?format=300w" alt="Dot One Media logo" loading="lazy">
+      <span class="mono-note">DOT ONE MEDIA · Create with purpose.</span>
+      <a class="foot-privacy" href="/privacy-policy">Privacy Policy</a>
+    </div>
+    <p class="foot-legal">Copyright © 2026 DOT ONE LLC. All Rights Reserved. DOT ONE®, DOT ONE MEDIA PRODUCTIONS™, and associated logos are trademarks or registered trademarks of DOT ONE LLC and/or its affiliates. Unauthorized use, reproduction, or distribution of this material, in whole or in part, without written permission from DOT ONE LLC or its parent company Dot One Media Inc. is strictly prohibited.</p>
+  </div>
+</footer>
+
+<script src="assets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = typeof gsap !== 'undefined';
+
+  /* ---------- media overrides from assets.js (portal-managed) ---------- */
+  var A = window.SITE_ASSETS || {};
+  function applySrc(slot, val){
+    if (!val) return;
+    var el = document.querySelector('[data-slot="' + slot + '"]');
+    if (el) el.src = val;
+  }
+  ['hero','purposeImage','work1','work2','work4','appIcon','screen1','screen2','screen3',
+   'teamDennis','teamBrittany','logoNav','logoContact','logoFooter','appStoreBadge'].forEach(function(k){ applySrc(k, A[k]); });
+
+  // App Store badge: if the image can't load (not uploaded yet), fall back to a text button
+  var asBadge = document.querySelector('.appstore-badge');
+  if (asBadge){
+    asBadge.addEventListener('error', function(){
+      var a = asBadge.closest('.appstore-link');
+      if (a){ a.classList.add('btn'); a.innerHTML = '<span class="b-dot"></span>Download on the App\u00a0Store'; }
+    });
+  }
+
+  if (A.acuityUrl){
+    document.querySelectorAll('[data-acuity]').forEach(function(a){ a.href = A.acuityUrl; });
+  }
+  // YouTube videos: any element with data-yt-key resolves from SITE_ASSETS
+  document.querySelectorAll('[data-yt-key]').forEach(function(el){
+    var id = A[el.getAttribute('data-yt-key')];
+    if (!id) return;
+    if (el.classList.contains('yt-facade')){
+      el.setAttribute('data-yt', id);
+      var im = el.querySelector('img');
+      if (im) im.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
+    } else {
+      el.href = 'https://youtu.be/' + id;
+    }
+  });
+  if (A.photos && A.photos.length){
+    var grid = document.getElementById('photoGrid');
+    if (grid){
+      grid.innerHTML = '';
+      A.photos.forEach(function(p, i){
+        var fig = document.createElement('figure');
+        fig.className = 'ph ph-' + ((i % 8) + 1);
+        fig.setAttribute('data-cap', p.caption || '');
+        fig.setAttribute('data-reveal', '');
+        var node;
+        if (p.type === 'video'){
+          node = document.createElement('video');
+          node.src = p.url; node.autoplay = true; node.muted = true;
+          node.loop = true; node.playsInline = true; node.setAttribute('playsinline', '');
+        } else {
+          node = document.createElement('img');
+          node.src = p.url;
+          node.alt = p.caption || 'Dot One Media photograph';
+          node.loading = 'lazy';
+          node.setAttribute('data-plx', '');
+        }
+        fig.appendChild(node);
+        grid.appendChild(fig);
+      });
+    }
+  }
+  if (A.bookCover){
+    var bk = document.querySelector('.book');
+    if (bk){ bk.classList.add('book--img'); bk.innerHTML = '<img src="' + A.bookCover + '" alt="Theopoetecology book cover">'; }
+  }
+
+  /* ---------- mobile menu ---------- */
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    var open = document.body.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.body.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- timecode (scroll = time, 24fps) ---------- */
+  var tc = document.getElementById('tc');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function updateTC(){
+    var frames = Math.floor(window.scrollY / 6);
+    var f = frames % 24;
+    var s = Math.floor(frames / 24) % 60;
+    var m = Math.floor(frames / 1440) % 60;
+    var h = Math.floor(frames / 86400);
+    tc.textContent = 'TC ' + pad(h) + ':' + pad(m) + ':' + pad(s) + ':' + pad(f);
+  }
+
+  /* ---------- rotating mission lines ---------- */
+  var lines = [
+    'Shining light into the darkness',
+    'Exposing the hidden',
+    'Giving a voice to the mute',
+    'Directing people to God'
+  ];
+  var rotator = document.getElementById('rotator');
+  var li = 0;
+  setInterval(function(){
+    rotator.style.opacity = 0;
+    setTimeout(function(){
+      li = (li + 1) % lines.length;
+      rotator.textContent = lines[li];
+      rotator.style.opacity = 1;
+    }, 500);
+  }, 3400);
+
+  /* ---------- phone screenshot cycler ---------- */
+  var shots = document.querySelectorAll('#phoneScreen img');
+  var dots = document.querySelectorAll('#phoneDots button');
+  var si = 0, phoneTimer;
+  function showShot(n){
+    si = n;
+    shots.forEach(function(im, i){ im.classList.toggle('active', i === n); });
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === n); });
+  }
+  function startPhone(){
+    phoneTimer = setInterval(function(){ showShot((si + 1) % shots.length); }, 3600);
+  }
+  dots.forEach(function(d, i){
+    d.addEventListener('click', function(){
+      clearInterval(phoneTimer);
+      showShot(i);
+      startPhone();
+    });
+  });
+  startPhone();
+
+  /* ---------- youtube facades (any .yt-facade with a data-yt id) ---------- */
+  document.querySelectorAll('.yt-facade').forEach(function(facade){
+    // self-heal thumbnail: YouTube returns a ~120px grey placeholder when a
+    // video has no maxresdefault image, so fall back to hqdefault (always exists).
+    var thumb = facade.querySelector('img');
+    if (thumb){
+      var fixThumb = function(){
+        if (thumb.naturalWidth && thumb.naturalWidth <= 121){
+          var id = facade.getAttribute('data-yt');
+          if (id && thumb.src.indexOf('hqdefault') === -1){
+            thumb.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+          }
+        }
+      };
+      if (thumb.complete) fixThumb();
+      thumb.addEventListener('load', fixThumb);
+    }
+
+    facade.addEventListener('click', function(){
+      var id = facade.getAttribute('data-yt');
+      if (!id) return;
+      var wrap = facade.parentElement;
+      var ifr = document.createElement('iframe');
+      ifr.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      ifr.title = facade.getAttribute('aria-label') || 'Video';
+      ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      ifr.allowFullscreen = true;
+      wrap.appendChild(ifr);
+      facade.remove();
+    });
+  });
+
+  /* ---------- rail: progress dot + section color/label ---------- */
+  var railDot = document.getElementById('railDot');
+  var railLabel = document.getElementById('railLabel');
+  var railSections = [
+    { id: 'top',            label: 'The Gateway',     color: '#e23b2e' },
+    { id: 'purpose',        label: 'Why Dot One',     color: '#e23b2e' },
+    { id: 'work',           label: 'Selected Work',   color: '#e23b2e' },
+    { id: 'photography',    label: 'Photography',     color: '#21201c' },
+    { id: 'theopoetecology',label: 'Theopoetecology', color: '#8f6e14' },
+    { id: 'news',           label: 'Dot 1 News',      color: '#e23b2e' },
+    { id: 'team',           label: 'The Studio',      color: '#21201c' },
+    { id: 'contact',        label: 'Start Something', color: '#e23b2e' }
+  ];
+  function updateRail(){
+    var doc = document.documentElement;
+    var p = window.scrollY / (doc.scrollHeight - window.innerHeight || 1);
+    railDot.style.top = (p * 100) + '%';
+    var current = railSections[0];
+    for (var i = 0; i < railSections.length; i++){
+      var el = document.getElementById(railSections[i].id);
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.45){
+        current = railSections[i];
+      }
+    }
+    railDot.style.background = current.color;
+    railDot.style.boxShadow = '0 0 12px ' + current.color;
+    if (railLabel.textContent !== current.label) railLabel.textContent = current.label;
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking){
+      requestAnimationFrame(function(){ updateTC(); updateRail(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+  updateTC(); updateRail();
+
+  if (!hasGsap || reduceMotion){
+    var staleVeil = document.querySelector('.intro-veil');
+    if (staleVeil) staleVeil.remove();
+    return;
+  }
+
+  /* ============ GSAP ============ */
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- opening: light blooms from the dot ---------- */
+  var intro = gsap.timeline();
+  intro
+    .fromTo('.veil-dot',
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: .45, ease: 'power2.out' })
+    .to('.veil-dot', {
+      boxShadow: '0 0 0 42px rgba(226,59,46,0)',
+      duration: .75, ease: 'power2.out'
+    })
+    .to('.veil-bloom', { scale: 340, duration: 1.05, ease: 'power3.inOut' }, '-=.3')
+    .to('.veil-dot', { opacity: 0, duration: .25 }, '<+.15')
+    .to('.intro-veil', {
+      opacity: 0, duration: .35,
+      onComplete: function(){ var v = document.querySelector('.intro-veil'); if (v) v.remove(); }
+    }, '-=.15')
+    .from('.hero-title .word span', {
+      yPercent: 115, duration: 1.05, ease: 'power4.out', stagger: .12
+    }, '-=.75')
+    .from('.hero-sub, .hero-meta', {
+      opacity: 0, y: 18, duration: .7, stagger: .1, ease: 'power2.out'
+    }, '-=.6')
+    .from('.hero-frame', { opacity: 0, y: 64, duration: 1.1, ease: 'power3.out' }, '-=.55');
+
+  /* ---------- generic scroll reveals ---------- */
+  gsap.utils.toArray('[data-reveal]').forEach(function(el){
+    gsap.from(el, {
+      y: 40, opacity: 0, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+    });
+  });
+
+  /* ---------- image parallax ---------- */
+  gsap.utils.toArray('img[data-plx]').forEach(function(img){
+    gsap.fromTo(img,
+      { yPercent: -7, scale: 1.14 },
+      { yPercent: 7, scale: 1.14, ease: 'none',
+        scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  /* ---------- hero parallax out ---------- */
+  gsap.to('.hero .container', {
+    yPercent: -14, opacity: .25, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  });
+
+  /* ---------- purpose dot glow pulse ---------- */
+  gsap.to('#purposeDot', {
+    boxShadow: '0 0 44px rgba(226,59,46,.4)', repeat: -1, yoyo: true, duration: 1.8, ease: 'sine.inOut'
+  });
+
+  /* ---------- TNF: background ripens per stage ---------- */
+  gsap.utils.toArray('.stage[data-stage]').forEach(function(stage){
+    gsap.to('.theo', {
+      backgroundColor: stage.getAttribute('data-stage'),
+      immediateRender: false, ease: 'none',
+      scrollTrigger: { trigger: stage, start: 'top 78%', end: 'top 40%', scrub: true }
+    });
+  });
+
+
+  /* ---------- lens rings draw ---------- */
+  ScrollTrigger.create({
+    trigger: '.lens-grid', start: 'top 80%', once: true,
+    onEnter: function(){
+      gsap.to('.ring-fg', { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut', stagger: .18 });
+    }
+  });
+
+  /* ---------- nav shade on scroll ---------- */
+  ScrollTrigger.create({
+    start: 60, end: 'max',
+    onUpdate: function(self){
+      document.querySelector('.nav').style.background = self.scroll() > 60
+        ? 'rgba(251,248,242,.94)'
+        : 'linear-gradient(rgba(251,248,242,.95),rgba(251,248,242,.72) 70%,transparent)';
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  /* When SAM.gov completes, put your real values here and they replace the "Pending" text everywhere.
+     Leave a field blank ('') to keep whatever the HTML already says. */
+  var V = { uei:'R3MTPRVZ9L42', cage:'', sam:'', est:'' };
+  Object.keys(V).forEach(function(k){
+    if(!V[k]) return;
+    var isPending = /pending/i.test(V[k]);
+    document.querySelectorAll('[data-fill="'+k+'"]').forEach(function(el){
+      el.textContent = V[k];
+      if(!isPending) el.classList.remove('ph');
+    });
+  });
+})();
+</script>
+</body>
+</html>
