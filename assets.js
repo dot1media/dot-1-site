@@ -10,7 +10,7 @@ window.SITE_ASSETS = {
   "work1": "images/tngimg_1.1.1.png",
   "work2": "images/gandg.jpg",
   "work2Youtube": "ZWZ4mo51cnc",
-  "work4": "images/camera.png",
+  "work4": "images/Dmatt.jpg",
   "youtubeId": "zMpii5i4c0s",
   "appIcon": "images/D1N.png",
   "appStoreBadge": "images/AppStore.png",
