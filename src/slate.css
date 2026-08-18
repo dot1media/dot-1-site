@@ -284,3 +284,9 @@ footer .foot-legal{color:rgba(247,246,243,.42)}
 .turning-sec .tc.away p{color:rgba(247,246,243,.42)}
 .turning-sec .turn-intro p:first-child::first-letter,.turning-sec .turn-intro > div > p:first-child::first-letter{font-family:var(--font-head);font-weight:600;font-size:3.3em;float:left;line-height:.85;padding:5px 12px 0 0;color:var(--red)}
 .mobile-menu a{font-size:clamp(1.5rem,6.2vw,3rem)}
+
+/* ---- the timecode: kept from the current site, styled for the masthead ---- */
+.mh-tc{display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;color:var(--bone-dim);white-space:nowrap}
+.mh-tc .rec{width:8px;height:8px;border-radius:50%;background:var(--red);animation:d1rec 1.6s ease-in-out infinite}
+@keyframes d1rec{50%{opacity:.25}}
+@media(max-width:900px){.mh-tc{display:none}}
