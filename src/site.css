@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme {
+  --color-char: #14120d;
+  --color-char-2: #181510;
+  --color-char-3: #100e0a;
+  --color-bone: #f2ede2;
+  --color-crimson: #b81616;
+  --color-gold: #c9a24a;
+  --color-photoblue: #2f74c0;
+  --color-photopaper: #fdfcf8;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+@import "./legacy.css";
+@import "./northern.css";
