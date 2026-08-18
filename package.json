@@ -1,0 +1,2 @@
+{ "name": "dot-1-site", "private": true,
+  "scripts": { "build:css": "tailwindcss -i src/site-c.css -o css/slate.css --minify" } }
