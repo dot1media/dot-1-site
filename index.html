@@ -1760,5 +1760,11 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
 })();
 </script>
 <!-- ===== end studio message widget ===== -->
+<script>
+(function(){var w=document.querySelector('.news-mark-wrap');if(!w)return;var t=w.querySelector('.news-title');function fit(){var r=document.createRange();var mx=0;t.querySelectorAll('.l1,.l2').forEach(function(sp){r.selectNodeContents(sp);var rects=r.getClientRects();for(var i=0;i<rects.length;i++){if(rects[i].width>mx)mx=rects[i].width;}});w.style.width=mx?(Math.ceil(mx)+1)+'px':'';}
+window.addEventListener('resize',fit);
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
+fit();setTimeout(fit,350);})();
+</script>
 </body>
 </html>
