@@ -1158,6 +1158,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
           <img class="app-icon" data-slot="appIcon" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/8c3177dd-95f3-4a28-bd61-cd2e5f0ef5ca/Untitled-1-red.png?format=300w" alt="Dot 1 News app icon">
           <a class="appstore-link" href="https://apps.apple.com/us/app/dot-1-news/id6757212352" target="_blank" rel="noopener" aria-label="Download Dot 1 News on the App Store"><img class="appstore-badge" data-slot="appStoreBadge" src="images/AppStore.png" alt="Download on the App Store"></a>
           <a class="read-online" href="https://news.dot1.media" target="_blank" rel="noopener">Read today's edition</a>
+          <button type="button" class="read-online" id="tipOpen" style="cursor:pointer;background:none;border:0;font:inherit">Send a news tip</button>
         </div>
       </div>
       <div class="phone-wrap" data-reveal>
@@ -1765,6 +1766,94 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
 window.addEventListener('resize',fit);
 if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit);}
 fit();setTimeout(fit,350);})();
+</script>
+<!-- Send a news tip modal: posts to the Dot 1 News editorial portal (the newsroom). -->
+<div class="tip-modal" id="tipModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tipHead">
+  <div class="tip-backdrop" id="tipBackdrop"></div>
+  <div class="tip-card" role="document">
+    <button class="tip-close" id="tipClose" aria-label="Close">&times;</button>
+    <div class="tip-eyebrow">Dot 1 News</div>
+    <h3 class="tip-title" id="tipHead">Send a news tip</h3>
+    <p class="tip-lead">Saw something we should look into? Send it to the newsroom. Include when and where if you can. Tell us as much or as little as you want.</p>
+    <form id="tipForm" novalidate>
+      <input class="tip-in" name="subject" placeholder="Subject (a short summary)">
+      <textarea class="tip-in tip-area" name="body" placeholder="What is happening? Tell us what you saw, heard, or know." required></textarea>
+      <input class="tip-in" name="location" placeholder="Location (e.g. Wasilla, AK)">
+      <label class="tip-check"><input type="checkbox" name="anonymous" id="tipAnon"> Submit anonymously</label>
+      <div id="tipWho">
+        <input class="tip-in" name="name" placeholder="Your name (optional)">
+        <input class="tip-in" name="contact" placeholder="Email or phone, so an editor can reach you">
+      </div>
+      <input class="tip-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="tip-msg" id="tipMsg" aria-live="polite"></div>
+      <button type="submit" class="btn tip-submit" id="tipSubmit"><span class="b-dot"></span>Send to the newsroom</button>
+      <p class="tip-fine">Sending a tip does not guarantee a story, and we may verify independently before publishing.</p>
+    </form>
+    <div class="tip-done" id="tipDone" hidden>
+      <div class="tip-done-mark">&#10003;</div>
+      <h3 class="tip-title">Tip received</h3>
+      <p class="tip-lead">Thank you. Our newsroom reviews every tip. If you left a way to reach you, an editor may follow up.</p>
+      <button class="btn" id="tipDoneBtn" style="cursor:pointer"><span class="b-dot"></span>Done</button>
+    </div>
+  </div>
+</div>
+<style>
+  .tip-modal{position:fixed;inset:0;z-index:200;display:none}
+  .tip-modal.open{display:block}
+  .tip-backdrop{position:absolute;inset:0;background:rgba(20,18,15,.55);backdrop-filter:blur(3px)}
+  .tip-card{position:relative;max-width:520px;width:calc(100% - 40px);margin:6vh auto 0;max-height:88vh;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px 28px;box-shadow:0 30px 80px rgba(20,18,15,.35)}
+  .tip-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;line-height:1;color:var(--bone);cursor:pointer;opacity:.6}
+  .tip-close:hover{opacity:1}
+  .tip-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+  .tip-title{font-size:clamp(1.4rem,3vw,1.9rem);margin:0 0 8px;color:var(--bone)}
+  .tip-lead{font-size:14.5px;line-height:1.55;color:var(--bone);opacity:.8;margin:0 0 18px}
+  .tip-in{width:100%;padding:12px 14px;margin-bottom:12px;border:1px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;color:var(--bone);background:#fff;box-sizing:border-box}
+  .tip-in:focus{outline:none;border-color:var(--red)}
+  .tip-area{min-height:140px;resize:vertical}
+  .tip-check{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--bone);margin:2px 0 12px;cursor:pointer}
+  .tip-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .tip-msg{color:#b3261e;font-size:13.5px;min-height:18px;margin-bottom:6px}
+  .tip-submit{cursor:pointer;width:100%;justify-content:center}
+  .tip-fine{font-size:11.5px;line-height:1.5;color:var(--bone);opacity:.55;text-align:center;margin:14px 0 0}
+  .tip-done{text-align:center;padding:14px 0}
+  .tip-done-mark{width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+</style>
+<script>
+(function(){
+  var ENDPOINT = "https://editorial.dot1.media/api/public/tip";
+  var modal=document.getElementById('tipModal'), form=document.getElementById('tipForm');
+  var open=document.getElementById('tipOpen'), closeEls=[document.getElementById('tipClose'),document.getElementById('tipBackdrop')];
+  var anon=document.getElementById('tipAnon'), who=document.getElementById('tipWho'), msg=document.getElementById('tipMsg');
+  var submit=document.getElementById('tipSubmit'), done=document.getElementById('tipDone'), doneBtn=document.getElementById('tipDoneBtn');
+  if(!modal||!open) return;
+  function show(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
+  function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+  open.addEventListener('click', show);
+  closeEls.forEach(function(el){ if(el) el.addEventListener('click', hide); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+  if(doneBtn) doneBtn.addEventListener('click', hide);
+  if(anon) anon.addEventListener('change', function(){ who.style.display = anon.checked ? 'none' : 'block'; });
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); msg.textContent='';
+    var fd=new FormData(form);
+    if(fd.get('website')){ done.hidden=false; form.style.display='none'; return; } // honeypot
+    if(!String(fd.get('body')||'').trim()){ msg.textContent='Please include a message.'; return; }
+    var payload={ kind:'tip', source:'main-site',
+      subject:fd.get('subject')||'', body:fd.get('body')||'', location:fd.get('location')||'',
+      anonymous:!!fd.get('anonymous'),
+      name:fd.get('anonymous')?'':(fd.get('name')||''), contact:fd.get('anonymous')?'':(fd.get('contact')||''),
+      website:'' };
+    submit.disabled=true; var label=submit.innerHTML; submit.innerHTML='<span class="b-dot"></span>Sending\u2026';
+    fetch(ENDPOINT,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) })
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok, d:d}; }); })
+      .then(function(res){
+        if(res.ok && res.d.ok){ form.style.display='none'; done.hidden=false; }
+        else { msg.textContent = res.d.error || 'Could not send your tip. Please try again.'; }
+      })
+      .catch(function(){ msg.textContent='Could not reach the newsroom. Check your connection and try again.'; })
+      .finally(function(){ submit.disabled=false; submit.innerHTML=label; });
+  });
+})();
 </script>
 </body>
 </html>
