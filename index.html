@@ -602,26 +602,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
 .foot-links{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;margin-top:4px}
 .foot-links .foot-privacy{white-space:nowrap}
 
-/* ---------- news tip modal ---------- */
-.tip-ov{position:fixed;inset:0;background:rgba(11,10,8,.72);backdrop-filter:blur(3px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-.tip-ov.on{display:flex}
-.tip-modal{background:var(--paper);color:var(--bone);max-width:540px;width:100%;max-height:90vh;overflow:auto;border-radius:16px;padding:34px 30px;box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative}
-.tip-modal h3{font-family:var(--display,Georgia,serif);font-size:1.8rem;margin:0 0 6px;color:var(--bone)}
-.tip-modal p.sub{color:#6b6459;font-size:.95rem;line-height:1.55;margin:0 0 18px}
-.tip-modal label{display:block;font-family:var(--mono,monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#6b6459;margin:14px 0 5px}
-.tip-modal input,.tip-modal textarea{width:100%;box-sizing:border-box;padding:11px 13px;border:1px solid var(--paper-3);border-radius:9px;background:#fff;font-size:15px;color:var(--bone);font-family:inherit}
-.tip-modal textarea{min-height:130px;resize:vertical}
-.tip-modal .trow{display:flex;gap:12px}.tip-modal .trow>div{flex:1}
-.tip-modal .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.tip-modal .tchk{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;color:var(--bone)}
-.tip-modal .tchk input{width:auto}
-.tip-modal .tsend{margin-top:20px;width:100%;background:var(--red);color:#fff;border:0;border-radius:999px;padding:13px;font-size:15px;font-weight:700;cursor:pointer}
-.tip-modal .tsend:disabled{opacity:.6;cursor:default}
-.tip-modal .tclose{position:absolute;top:14px;right:16px;background:none;border:0;font-size:26px;line-height:1;color:#6b6459;cursor:pointer}
-.tip-modal .tmsg{margin-top:14px;font-size:14px;min-height:18px}
-.tip-modal .tmsg.bad{color:var(--red)} .tip-modal .tmsg.ok{color:#2f8f6b}
-.tip-modal .tfine{font-size:12px;color:#6b6459;margin-top:16px;line-height:1.55}
-.tip-modal .tthanks{text-align:center;padding:30px 10px}
+
 </style>
 <meta name="theme-color" content="#fbf8f2">
 <script>document.documentElement.classList.add("js");</script>
@@ -1179,7 +1160,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
           <img class="app-icon" data-slot="appIcon" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/8c3177dd-95f3-4a28-bd61-cd2e5f0ef5ca/Untitled-1-red.png?format=300w" alt="Dot 1 News app icon">
           <a class="appstore-link" href="https://apps.apple.com/us/app/dot-1-news/id6757212352" target="_blank" rel="noopener" aria-label="Download Dot 1 News on the App Store"><img class="appstore-badge" data-slot="appStoreBadge" src="images/AppStore.png" alt="Download on the App Store"></a>
           <a class="read-online" href="https://news.dot1.media" target="_blank" rel="noopener">Read today's edition</a>
-          <button type="button" class="read-online" id="tipOpen" style="cursor:pointer;background:none;border:0;font:inherit">Send a news tip</button>
+          <button type="button" class="read-online tip-open" style="cursor:pointer;background:none;border:0;font:inherit">Send a news tip</button>
         </div>
       </div>
       <div class="phone-wrap" data-reveal>
@@ -1373,7 +1354,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
       <a class="btn btn--gold" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener"><span class="b-dot"></span>Schedule a session</a>
       <a class="btn" href="mailto:contact@dot1.media"><span class="b-dot"></span>contact@dot1.media</a>
       <a class="btn" href="tel:+19072034993"><span class="b-dot"></span>907·203·4993</a>
-      <a class="btn" href="#" id="tipOpen"><span class="b-dot"></span>Submit a news tip</a>
+      <a class="btn tip-open" href="#"><span class="b-dot"></span>Submit a news tip</a>
     </div>
     <div class="contact-meta" data-reveal>
       <span>Wasilla, Alaska · USA</span>
@@ -1844,13 +1825,13 @@ fit();setTimeout(fit,350);})();
 (function(){
   var ENDPOINT = "https://editorial.dot1.media/api/public/tip";
   var modal=document.getElementById('tipModal'), form=document.getElementById('tipForm');
-  var open=document.getElementById('tipOpen'), closeEls=[document.getElementById('tipClose'),document.getElementById('tipBackdrop')];
+  var opens=document.querySelectorAll('.tip-open'), closeEls=[document.getElementById('tipClose'),document.getElementById('tipBackdrop')];
   var anon=document.getElementById('tipAnon'), who=document.getElementById('tipWho'), msg=document.getElementById('tipMsg');
   var submit=document.getElementById('tipSubmit'), done=document.getElementById('tipDone'), doneBtn=document.getElementById('tipDoneBtn');
-  if(!modal||!open) return;
+  if(!modal||!opens.length) return;
   function show(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
   function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
-  open.addEventListener('click', show);
+  opens.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); show(); }); });
   closeEls.forEach(function(el){ if(el) el.addEventListener('click', hide); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
   if(doneBtn) doneBtn.addEventListener('click', hide);
@@ -1874,68 +1855,6 @@ fit();setTimeout(fit,350);})();
       })
       .catch(function(){ msg.textContent='Could not reach the newsroom. Check your connection and try again.'; })
       .finally(function(){ submit.disabled=false; submit.innerHTML=label; });
-  });
-})();
-</script>
-<div class="tip-ov" id="tipOv" role="dialog" aria-modal="true" aria-label="Submit a news tip">
-  <div class="tip-modal" id="tipModal">
-    <button class="tclose" id="tipClose" aria-label="Close">&times;</button>
-    <h3>Submit a news tip</h3>
-    <p class="sub">Have something Dot 1 News should look into? Share it below, on the record or anonymously.</p>
-    <form id="tipForm" autocomplete="off">
-      <div class="hp"><label>Website</label><input id="t_website" tabindex="-1" autocomplete="off"></div>
-      <label for="t_subject">Subject</label>
-      <input id="t_subject" maxlength="300" placeholder="A short summary">
-      <div id="tIdFields">
-        <div class="trow">
-          <div><label for="t_name">Your name</label><input id="t_name" maxlength="200"></div>
-          <div><label for="t_contact">Email or phone</label><input id="t_contact" maxlength="200"></div>
-        </div>
-      </div>
-      <label for="t_location">Location</label>
-      <input id="t_location" maxlength="200" placeholder="Where did this happen?">
-      <label for="t_body">Your tip</label>
-      <textarea id="t_body" maxlength="8000" placeholder="Tell us what you know…"></textarea>
-      <label class="tchk"><input type="checkbox" id="t_anon"> Send anonymously</label>
-      <button class="tsend" id="tipBtn" type="submit">Send tip</button>
-      <div class="tmsg" id="tipMsg"></div>
-      <p class="tfine">Dot 1 News protects tipster confidentiality. Please don't include information that puts you at risk.</p>
-    </form>
-  </div>
-</div>
-<script>
-(function(){
-  var ov=document.getElementById('tipOv'), open=document.getElementById('tipOpen'),
-      close=document.getElementById('tipClose'), form=document.getElementById('tipForm'),
-      btn=document.getElementById('tipBtn'), msg=document.getElementById('tipMsg'), anon=document.getElementById('t_anon');
-  if(!ov||!open) return;
-  function show(e){ if(e)e.preventDefault(); ov.classList.add('on'); }
-  function hide(){ ov.classList.remove('on'); }
-  open.addEventListener('click', show);
-  close.addEventListener('click', hide);
-  ov.addEventListener('click', function(e){ if(e.target===ov) hide(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
-  anon.addEventListener('change', function(){
-    var d=document.getElementById('tIdFields'); d.style.opacity=anon.checked?'.4':'1';
-    document.getElementById('t_name').disabled=anon.checked;
-    document.getElementById('t_contact').disabled=anon.checked;
-  });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var body=(document.getElementById('t_body').value||'').trim();
-    if(!body){ msg.className='tmsg bad'; msg.textContent='Please include a message.'; return; }
-    var a=anon.checked;
-    var payload={ website:document.getElementById('t_website').value,
-      name:a?'':document.getElementById('t_name').value, contact:a?'':document.getElementById('t_contact').value,
-      location:document.getElementById('t_location').value, subject:document.getElementById('t_subject').value,
-      body:body, anonymous:a, kind:'tip', source:'main-site' };
-    btn.disabled=true; msg.className='tmsg'; msg.textContent='Sending…';
-    fetch('https://editorial.dot1.media/api/public/tip',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
-      .then(function(res){
-        if(res.ok&&res.j&&res.j.ok){ document.getElementById('tipModal').innerHTML='<button class="tclose" onclick="document.getElementById(\'tipOv\').classList.remove(\'on\')">&times;</button><div class="tthanks"><h3>Thank you</h3><p class="sub">Your tip reached the Dot 1 News newsroom. If you left contact details, an editor may follow up.</p></div>'; }
-        else { btn.disabled=false; msg.className='tmsg bad'; msg.textContent=(res.j&&res.j.error)||'Something went wrong. Please try again.'; }
-      }).catch(function(){ btn.disabled=false; msg.className='tmsg bad'; msg.textContent='Network error. Please try again.'; });
   });
 })();
 </script>
