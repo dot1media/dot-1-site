@@ -6,7 +6,7 @@ window.SITE_ASSETS = {
   "logoContact": "images/dot1mediainverted.gif",
   "logoFooter": "images/BLKFullTPLogo.png",
   "hero": "images/BASEcamp.jpg",
-  "purposeImage": "images/mountian.jpg",
+  "purposeImage": "images/mMatSu.jpg",
   "work1": "images/tngimg_1.1.1.png",
   "work2": "images/gandg.jpg",
   "work2Youtube": "ZWZ4mo51cnc",
