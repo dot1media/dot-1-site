@@ -44,7 +44,7 @@ a{color:inherit}
 /* header (matches main site) */
 .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(251,248,242,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand img{height:52px;width:auto;display:block}
+.brand img{height:84px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--red)}
@@ -106,7 +106,7 @@ a{color:inherit}
 /* footer (matches main site) */
 footer{background:var(--bone);color:var(--paper);padding:56px 0 40px}
 .foot-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
-.foot-inner img{height:46px;width:auto;opacity:.9}
+.foot-inner img{height:64px;width:auto;object-fit:contain}
 .foot-note{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;color:rgba(251,248,242,.55)}
 .foot-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
 .foot-links a{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,248,242,.6);text-decoration:none}
@@ -118,7 +118,7 @@ footer{background:var(--bone);color:var(--paper);padding:56px 0 40px}
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="/" aria-label="Dot One Media home"><img src="images/DotOneMediaLogoAnimation.gif" alt="Dot One Media"></a>
+    <a class="brand" href="/" aria-label="Dot One Media home"><img data-slot="logoNav" src="images/GreyTPLogoAnimated.gif" alt="Dot One Media"></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/#work">Work</a>
       <a href="/#photography">Photography</a>
@@ -208,7 +208,7 @@ footer{background:var(--bone);color:var(--paper);padding:56px 0 40px}
 
 <footer>
   <div class="container foot-inner">
-    <img src="images/WhiteFullTPLogo.png" alt="Dot One Media" onerror="this.style.display='none'">
+    <img data-slot="logoFooter" src="https://static1.squarespace.com/static/6819574720c1f6179c83327f/t/6832bc0c76dffb04f9c184ed/1748155404206/New+Logo+WHT+on+BLK.png?format=300w" alt="Dot One Media">
     <span class="foot-note">DOT ONE MEDIA · Create with purpose.</span>
     <div class="foot-links">
       <a href="/">Home</a>
@@ -219,5 +219,7 @@ footer{background:var(--bone);color:var(--paper);padding:56px 0 40px}
   </div>
 </footer>
 
+<script src="assets.js"></script>
+<script>(function(){var A=window.SITE_ASSETS||{};function set(slot,val){if(!val)return;var el=document.querySelector('[data-slot="'+slot+'"]');if(el)el.src=val;}set("logoNav",A.logoNav);set("logoFooter",A.logoFooter);})();</script>
 </body>
 </html>
