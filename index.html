@@ -1052,7 +1052,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
         <p class="gov-sub" data-reveal>How to Work With Us</p>
         <p data-reveal style="color:var(--bone-dim);font-size:15px;line-height:1.65;max-width:52ch">We're available for direct award (micro-purchase and simplified acquisition), as a production partner to prime contractors, and for consideration under veteran small-business set-asides. Reach out for our full capability statement and past-performance references.</p>
         <div class="gov-cta" data-reveal>
-          <a class="btn" href="mailto:contact@dot1.media?subject=Capability%20Statement%20Request"><span class="b-dot"></span>Request Capability Statement</a>
+          <button type="button" class="btn cap-open" style="cursor:pointer"><span class="b-dot"></span>Request Capability Statement</button>
         </div>
       </div>
       <div class="gov-poc" data-reveal>
@@ -1856,6 +1856,62 @@ fit();setTimeout(fit,350);})();
         else { msg.textContent = res.d.error || 'Could not send your tip. Please try again.'; }
       })
       .catch(function(){ msg.textContent='Could not reach the newsroom. Check your connection and try again.'; })
+      .finally(function(){ submit.disabled=false; submit.innerHTML=label; });
+  });
+})();
+</script>
+<!-- Request Capability Statement modal: captures an email and the portal sends the PDF. -->
+<div class="tip-modal" id="capModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="capHead">
+  <div class="tip-backdrop" id="capBackdrop"></div>
+  <div class="tip-card" role="document">
+    <button class="tip-close" id="capClose" aria-label="Close">&times;</button>
+    <div class="tip-eyebrow">Dot One Media &middot; SDVOSB</div>
+    <h3 class="tip-title" id="capHead">Capability Statement</h3>
+    <p class="tip-lead">Enter your email and we'll send our capability statement straight to your inbox.</p>
+    <form id="capForm" novalidate>
+      <input class="tip-in" name="email" type="email" placeholder="Your email" autocomplete="email" maxlength="200" required>
+      <input class="tip-in" name="name" placeholder="Your name (optional)" autocomplete="name" maxlength="120">
+      <input class="tip-in" name="org" placeholder="Agency or organization (optional)" maxlength="160">
+      <input class="tip-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="tip-msg" id="capMsg" aria-live="polite"></div>
+      <button type="submit" class="btn tip-submit" id="capSubmit"><span class="b-dot"></span>Send it to me</button>
+      <p class="tip-fine">We'll email you the statement and may follow up about your project. No spam.</p>
+    </form>
+    <div class="tip-done" id="capDone" hidden>
+      <div class="tip-done-mark">&#10003;</div>
+      <h3 class="tip-title">On its way</h3>
+      <p class="tip-lead">Check your inbox for the Dot One Media capability statement. Didn't get it? Email contact@dot1.media.</p>
+      <button class="btn" id="capDoneBtn" style="cursor:pointer"><span class="b-dot"></span>Done</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var ENDPOINT = "https://portal.dot1.media/api/capability-statement";
+  var modal=document.getElementById('capModal'), form=document.getElementById('capForm');
+  var opens=document.querySelectorAll('.cap-open'), closeEls=[document.getElementById('capClose'),document.getElementById('capBackdrop')];
+  var msg=document.getElementById('capMsg'), submit=document.getElementById('capSubmit'), done=document.getElementById('capDone'), doneBtn=document.getElementById('capDoneBtn');
+  if(!modal||!opens.length) return;
+  function show(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); setTimeout(function(){var e=form.querySelector('input[name=email]'); if(e) e.focus();},60); }
+  function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+  opens.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); show(); }); });
+  closeEls.forEach(function(el){ if(el) el.addEventListener('click', hide); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+  if(doneBtn) doneBtn.addEventListener('click', hide);
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); msg.textContent='';
+    var fd=new FormData(form);
+    if(fd.get('website')){ form.style.display='none'; done.hidden=false; return; } // honeypot
+    var email=String(fd.get('email')||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.textContent='Please enter a valid email address.'; return; }
+    submit.disabled=true; var label=submit.innerHTML; submit.innerHTML='<span class="b-dot"></span>Sending…';
+    fetch(ENDPOINT,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ email:email, name:fd.get('name')||'', org:fd.get('org')||'', website:'' }) })
+      .then(function(r){ return r.json().catch(function(){return {};}).then(function(d){ return {ok:r.ok, d:d}; }); })
+      .then(function(res){
+        if(res.ok && res.d.ok){ form.style.display='none'; done.hidden=false; }
+        else { msg.textContent = res.d.error || 'Could not send. Please email contact@dot1.media.'; }
+      })
+      .catch(function(){ msg.textContent='Could not connect. Please email contact@dot1.media.'; })
       .finally(function(){ submit.disabled=false; submit.innerHTML=label; });
   });
 })();
