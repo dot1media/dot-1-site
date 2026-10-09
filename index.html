@@ -1376,6 +1376,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
       <span class="mono-note">DOT ONE MEDIA · Create with purpose.</span>
       <div class="foot-links">
         <a class="foot-privacy" href="/privacy-policy">Privacy Policy</a>
+        <a class="foot-privacy cap-open" href="/#request-capability">Capability Statement</a>
         <a class="foot-privacy" href="/Dot-One-Media-Client-Services-Agreement.pdf" target="_blank" rel="noopener">Client Services Agreement</a>
         <a class="foot-privacy" href="/Dot-One-Media-Release-and-Waiver.pdf" target="_blank" rel="noopener">Media Release</a>
         <a class="foot-privacy" href="/Dot-One-Media-Minor-Release-and-Waiver.pdf" target="_blank" rel="noopener">Minor Release</a>
@@ -1898,6 +1899,8 @@ fit();setTimeout(fit,350);})();
   closeEls.forEach(function(el){ if(el) el.addEventListener('click', hide); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
   if(doneBtn) doneBtn.addEventListener('click', hide);
+  // Footer links from other pages land here with #request-capability to open the modal on arrival.
+  if(location.hash==='#request-capability'){ show(); }
   form.addEventListener('submit', function(e){
     e.preventDefault(); msg.textContent='';
     var fd=new FormData(form);
