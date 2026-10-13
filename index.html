@@ -277,6 +277,7 @@ body.menu-open .mobile-menu a{transform:translateY(0);opacity:1}
 .work-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.3,0,.2,1)}
 .work-row:hover .work-media img{transform:scale(1.05)}
 .work-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+.work-media--film{aspect-ratio:16/9} /* show the footage exactly as framed, no crop */
 .vid-controls{position:absolute;right:14px;bottom:14px;z-index:3;display:flex;gap:8px}
 .vid-btn{width:46px;height:46px;border-radius:50%;
   border:1px solid rgba(236,231,220,.5);display:grid;place-items:center;cursor:pointer;
@@ -290,6 +291,19 @@ body.menu-open .mobile-menu a{transform:translateY(0);opacity:1}
 .vid-play .ic-pause{display:block}
 .vid-play[aria-pressed="true"] .ic-play{display:block}
 .vid-play[aria-pressed="true"] .ic-pause{display:none}
+/* pop-out player */
+.vid-modal{position:fixed;inset:0;z-index:999;display:none;place-items:center;
+  background:rgba(7,7,7,.92);backdrop-filter:blur(8px);padding:clamp(16px,4vw,48px)}
+.vid-modal.open{display:grid}
+.vid-modal__inner{position:relative;width:min(1600px,100%);max-height:100%}
+.vid-modal video{width:100%;max-height:calc(100vh - clamp(32px,8vw,96px));
+  background:#000;border-radius:4px;display:block;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.vid-modal__close{position:absolute;top:-14px;right:-14px;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(236,231,220,.5);background:rgba(7,7,7,.8);color:var(--bone);cursor:pointer;
+  display:grid;place-items:center;transition:.3s}
+.vid-modal__close:hover{background:var(--red);border-color:var(--red);transform:scale(1.06)}
+.vid-modal__close svg{width:20px;height:20px}
+@media(max-width:600px){.vid-modal__close{top:-8px;right:-4px;width:40px;height:40px}}
 .work-num{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;color:var(--red);margin-bottom:16px;display:block}
 .work-info h3{font-family:var(--font-display);font-stretch:116%;font-weight:900;text-transform:uppercase;
   font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1;margin-bottom:18px}
@@ -869,7 +883,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
     </div>
 
     <article class="work-row" data-reveal>
-      <div class="work-media">
+      <div class="work-media work-media--film">
         <video id="ngVideo" src="video/narrow-gate.mp4" poster="video/narrow-gate-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The Narrow Gate, a Dot One Media production"></video>
         <div class="vid-controls">
           <button class="vid-btn vid-play" id="ngPlay" type="button" aria-pressed="false" aria-label="Pause video">
@@ -879,6 +893,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
           <button class="vid-btn vid-sound" id="ngSound" type="button" aria-pressed="false" aria-label="Turn on sound">
             <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
             <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          </button>
+          <button class="vid-btn vid-expand" id="ngExpand" type="button" aria-label="Expand to a larger player">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
           </button>
         </div>
       </div>
@@ -1414,6 +1431,15 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
   </div>
 </footer>
 
+<div class="vid-modal" id="ngModal" role="dialog" aria-modal="true" aria-label="The Narrow Gate — full player">
+  <div class="vid-modal__inner">
+    <button class="vid-modal__close" id="ngModalClose" type="button" aria-label="Close player">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+    <video id="ngModalVideo" controls playsinline preload="none" poster="video/narrow-gate-poster.jpg" data-src="video/narrow-gate-hd.mp4"></video>
+  </div>
+</div>
+
 <script src="assets.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1625,6 +1651,35 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
           }
         });
       }, { threshold: 0.25 }).observe(v);
+    }
+
+    /* ---------- pop-out: larger 1440p player ---------- */
+    var expand = document.getElementById('ngExpand');
+    var modal = document.getElementById('ngModal');
+    var mv = document.getElementById('ngModalVideo');
+    var mClose = document.getElementById('ngModalClose');
+    if (expand && modal && mv && mClose) {
+      var resumeCard = false;
+      var open = function(){
+        resumeCard = !v.paused;
+        v.pause(); // don't play two tracks at once
+        if (!mv.src) mv.src = mv.getAttribute('data-src'); // load the big file only now
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        mv.currentTime = 0; mv.muted = false;
+        var p = mv.play(); if (p && p.catch) p.catch(function(){});
+        mClose.focus();
+      };
+      var close = function(){
+        mv.pause();
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        if (resumeCard) tryPlay();
+      };
+      expand.addEventListener('click', open);
+      mClose.addEventListener('click', close);
+      modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
     }
   })();
 
