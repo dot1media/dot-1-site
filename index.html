@@ -276,6 +276,15 @@ body.menu-open .mobile-menu a{transform:translateY(0);opacity:1}
 .work-media{overflow:hidden;position:relative;aspect-ratio:16/10;background:var(--smoke)}
 .work-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.3,0,.2,1)}
 .work-row:hover .work-media img{transform:scale(1.05)}
+.work-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vid-sound{position:absolute;right:14px;bottom:14px;z-index:3;width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(236,231,220,.5);display:grid;place-items:center;cursor:pointer;
+  background:rgba(7,7,7,.5);backdrop-filter:blur(5px);color:var(--bone);transition:.3s}
+.vid-sound:hover{background:var(--red);border-color:var(--red);transform:scale(1.06)}
+.vid-sound svg{width:19px;height:19px;display:block}
+.vid-sound .ic-on{display:none}
+.vid-sound[aria-pressed="true"] .ic-on{display:block}
+.vid-sound[aria-pressed="true"] .ic-off{display:none}
 .work-num{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;color:var(--red);margin-bottom:16px;display:block}
 .work-info h3{font-family:var(--font-display);font-stretch:116%;font-weight:900;text-transform:uppercase;
   font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1;margin-bottom:18px}
@@ -855,8 +864,12 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
     </div>
 
     <article class="work-row" data-reveal>
-      <div class="work-media" data-plx-wrap>
-        <img data-plx data-slot="work1" src="https://images.squarespace-cdn.com/content/v1/6819574720c1f6179c83327f/c08c5ed6-caf5-490e-ac4e-6a18cf142001/DT1_0384.jpg?format=1500w" alt="Still frame from The Narrow Gate, a Dot One Media production" loading="lazy">
+      <div class="work-media">
+        <video id="ngVideo" src="video/narrow-gate.mp4" poster="video/narrow-gate-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The Narrow Gate, a Dot One Media production"></video>
+        <button class="vid-sound" id="ngSound" type="button" aria-pressed="false" aria-label="Turn on sound">
+          <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
       </div>
       <div class="work-info">
         <span class="work-num">PROJECT / 01</span>
@@ -1559,6 +1572,34 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
       facade.remove();
     });
   });
+
+  /* ---------- Narrow Gate: autoplay muted loop, tap for sound ---------- */
+  (function(){
+    var v = document.getElementById('ngVideo');
+    var btn = document.getElementById('ngSound');
+    if (!v || !btn) return;
+    // Nudge autoplay along on browsers that need an explicit play() after metadata.
+    var tryPlay = function(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); };
+    if (v.readyState >= 2) tryPlay(); else v.addEventListener('loadeddata', tryPlay, { once: true });
+    btn.addEventListener('click', function(){
+      v.muted = !v.muted;
+      btn.setAttribute('aria-pressed', v.muted ? 'false' : 'true');
+      btn.setAttribute('aria-label', v.muted ? 'Turn on sound' : 'Mute');
+      if (!v.muted) tryPlay(); // ensure it's running when sound is turned on
+    });
+    // If the viewer scrolls the clip out of view, mute it so audio doesn't trail them.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (!e.isIntersecting && !v.muted) {
+            v.muted = true;
+            btn.setAttribute('aria-pressed', 'false');
+            btn.setAttribute('aria-label', 'Turn on sound');
+          }
+        });
+      }, { threshold: 0.25 }).observe(v);
+    }
+  })();
 
   /* ---------- rail: progress dot + section color/label ---------- */
   var railDot = document.getElementById('railDot');
