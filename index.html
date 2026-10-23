@@ -1854,8 +1854,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
   #d1w-close{background:transparent;border:none;color:#fbf8f2;font-size:22px;line-height:1;cursor:pointer;opacity:.7;padding:0 2px}
   #d1w-close:hover{opacity:1}
   #d1w-form{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px}
-  #d1w-form input,#d1w-form textarea{width:100%;font-family:var(--font-body,'Archivo',sans-serif);font-size:14px;color:#221f1a;background:#fff;border:1px solid var(--line,rgba(33,32,28,.18));border-radius:9px;padding:11px 12px;outline:none;transition:border-color .15s;box-sizing:border-box}
-  #d1w-form input:focus,#d1w-form textarea:focus{border-color:var(--red,#e23b2e)}
+  #d1w-form input,#d1w-form textarea,#d1w-form select{width:100%;font-family:var(--font-body,'Archivo',sans-serif);font-size:14px;color:#221f1a;background:#fff;border:1px solid var(--line,rgba(33,32,28,.18));border-radius:9px;padding:11px 12px;outline:none;transition:border-color .15s;box-sizing:border-box}
+  #d1w-form input:focus,#d1w-form textarea:focus,#d1w-form select:focus{border-color:var(--red,#e23b2e)}
   #d1w-form textarea{resize:vertical;min-height:86px}
   .d1w-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
   #d1w-send{background:var(--red,#e23b2e);color:#fff;border:none;border-radius:9px;padding:12px;font-family:var(--font-mono,monospace);font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:opacity .15s;margin-top:2px}
@@ -1880,6 +1880,12 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
       <input class="d1w-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input id="d1w-name" type="text" placeholder="Your name" autocomplete="name" maxlength="120">
       <input id="d1w-email" type="email" placeholder="Your email" autocomplete="email" maxlength="200">
+      <select id="d1w-topic" aria-label="What is this about?">
+        <option value="general">General inquiry</option>
+        <option value="photo">Photography</option>
+        <option value="video">Video &amp; Cinematography</option>
+        <option value="support">Support (website, app or portal)</option>
+      </select>
       <textarea id="d1w-msg" placeholder="How can we help? Tell us a little about your project&hellip;" maxlength="4000"></textarea>
       <div id="d1w-error" hidden></div>
       <button type="submit" id="d1w-send">Send message</button>
@@ -1897,11 +1903,11 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
   document.getElementById('d1w-close').addEventListener('click',cl);
   form.addEventListener('submit',function(e){
     e.preventDefault();err.hidden=true;
-    var name=document.getElementById('d1w-name').value.trim(),email=document.getElementById('d1w-email').value.trim(),message=document.getElementById('d1w-msg').value.trim(),website=form.website.value;
+    var name=document.getElementById('d1w-name').value.trim(),email=document.getElementById('d1w-email').value.trim(),message=document.getElementById('d1w-msg').value.trim(),topic=document.getElementById('d1w-topic').value,website=form.website.value;
     if(!name||!email||!message){err.textContent='Please add your name, email, and a message.';err.hidden=false;return;}
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){err.textContent='Please enter a valid email address.';err.hidden=false;return;}
     send.disabled=true;send.textContent='Sending\u2026';
-    fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name:name,email:email,message:message,website:website})})
+    fetch(ENDPOINT,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name:name,email:email,message:message,topic:topic,website:website})})
       .then(function(r){if(!r.ok)throw new Error();return r.json();})
       .then(function(){form.hidden=true;done.hidden=false;})
       .catch(function(){err.textContent='Could not send. Please email contact@dot1.media.';err.hidden=false;send.disabled=false;send.textContent='Send message';});
