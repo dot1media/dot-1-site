@@ -778,6 +778,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
       <a href="https://portal.dot1.media/shop">Shop</a>
     </nav>
     <div style="display:flex;align-items:center;gap:22px">
+      <button class="exp-toggle" type="button" data-exp-toggle aria-pressed="false" title="Switch between the classic site and the One Light experience">
+        <span class="exp-dot" aria-hidden="true"></span><span class="exp-lbl">One Light</span>
+      </button>
       <span class="timecode"><span class="rec"></span><span id="tc">TC 00:00:00:00</span></span>
       <a class="nav-cta" data-acuity href="https://dotonemedia.as.me/" target="_blank" rel="noopener">Start a project</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -798,6 +801,9 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
   <a href="#team">Team</a>
       <a href="https://portal.dot1.media/shop">Shop</a>
   <a href="#contact">Contact</a>
+  <button class="exp-toggle" type="button" data-exp-toggle aria-pressed="false">
+    <span class="exp-dot" aria-hidden="true"></span><span class="exp-lbl">One Light</span>
+  </button>
   <span class="mono-note">Wasilla, Alaska · Create with purpose.</span>
 </nav>
 
@@ -914,6 +920,18 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
   .prism-spin,.prism-core::after{animation:none;}
   .prism-card{transition:none;}
 }
+/* ---- experience toggle: the classic site is the default; One Light is opt-in ---- */
+#constellation{display:none;}
+body.exp-prism #constellation{display:block;}
+.exp-toggle{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);border:1px solid rgba(33,32,28,.26);
+  border-radius:999px;padding:8px 15px;white-space:nowrap;transition:color .3s,border-color .3s;}
+.exp-toggle:hover{color:var(--bone);border-color:rgba(33,32,28,.5);}
+.exp-toggle .exp-dot{width:7px;height:7px;border-radius:50%;background:var(--red);transition:box-shadow .3s;}
+body.exp-prism .exp-toggle{color:var(--bone);border-color:var(--red);}
+body.exp-prism .exp-toggle .exp-dot{box-shadow:0 0 9px 2px rgba(226,59,46,.6);}
+@media(max-width:1100px){.nav .exp-toggle{display:none;}}
+.mobile-menu .exp-toggle{align-self:flex-start;margin-top:4px;}
 </style>
 <section class="prism section-pad" id="constellation" aria-label="The whole of Dot One">
   <div class="container">
@@ -2313,6 +2331,32 @@ fit();setTimeout(fit,350);})();
     else if(p.photographer) d.line = 'Photographed by ' + p.photographer + ' for Dot One Media.';
     if(p.image) d.img = p.image;
     d.live = true; refresh('photo');
+  });
+})();
+</script>
+
+<!-- ===== Experience toggle: classic is default, One Light is opt-in and remembered ===== -->
+<script>
+(function(){
+  var KEY = 'dot1_exp';
+  var toggles = [].slice.call(document.querySelectorAll('[data-exp-toggle]'));
+  if(!toggles.length) return;
+  function apply(on, scroll){
+    document.body.classList.toggle('exp-prism', on);
+    toggles.forEach(function(b){
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var l = b.querySelector('.exp-lbl'); if(l) l.textContent = on ? 'Classic view' : 'One Light';
+    });
+    if(on && scroll){ var s = document.getElementById('constellation'); if(s) s.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  }
+  var saved = null; try{ saved = localStorage.getItem(KEY); }catch(e){}
+  apply(saved === 'prism', false);
+  toggles.forEach(function(b){
+    b.addEventListener('click', function(){
+      var on = !document.body.classList.contains('exp-prism');
+      apply(on, on);
+      try{ localStorage.setItem(KEY, on ? 'prism' : 'classic'); }catch(e){}
+    });
   });
 })();
 </script>
