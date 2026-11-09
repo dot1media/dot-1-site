@@ -2,6 +2,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/selah", "destination": "/", "permanent": false }
+    { "source": "/home", "destination": "https://www.dot1.media/", "permanent": true },
+    { "source": "/contact", "destination": "https://www.dot1.media/#contact", "permanent": true },
+    { "source": "/services", "destination": "https://www.dot1.media/#work", "permanent": true },
+    { "source": "/theopoetecology", "destination": "https://www.dot1.media/#theopoetecology", "permanent": true },
+    { "source": "/dot-1-news", "destination": "https://www.dot1.media/#news", "permanent": true },
+    { "source": "/store", "destination": "https://www.dot1.media/", "permanent": true },
+    { "source": "/appointments", "destination": "https://www.dot1.media/portal.html", "permanent": true },
+    { "source": "/selah", "destination": "https://www.dot1.media/", "permanent": false },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "dot1.media" }], "destination": "https://www.dot1.media/:path*", "permanent": true }
   ]
 }
