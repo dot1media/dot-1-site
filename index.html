@@ -610,6 +610,18 @@ footer{border-top:1px solid var(--line);padding:44px 0 54px;background:var(--ink
 @media(max-width:860px){.turn-intro,.turn-contrast{grid-template-columns:1fr}.turn{grid-template-columns:1fr;gap:8px}.turn .tn{padding-top:0}}
 
 
+/* ---------- Discernt accent: scope the two Discernt sections to the brand gold ----------
+   The rest of dot1.media keeps the Dot One Media red; #news + #turning carry Discernt's
+   deep gold (#8A6A17). Overriding --red on the sections re-tints every var(--red) inside
+   them; the rules below repaint the few hardcoded reds the token can't reach. */
+.news,.turning-sec{--red:#8a6a17}
+.news .app-icon{box-shadow:0 10px 30px rgba(138,106,23,.25)}
+.news .phone-glow{background:radial-gradient(ellipse,rgba(138,106,23,.12),transparent 65%)}
+.news .lens{background:rgba(138,106,23,.04)}
+.news .lens:hover{border-color:rgba(138,106,23,.5)}
+.turning-sec .turn-from{text-decoration-color:rgba(138,106,23,.5)}
+
+
 /* ---------- music ---------- */
 .music-feature{display:flex;gap:clamp(20px,4vw,44px);align-items:center;flex-wrap:wrap;
   margin-top:clamp(28px,4vh,48px);padding:clamp(24px,3vw,38px);
