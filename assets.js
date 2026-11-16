@@ -12,7 +12,7 @@ window.SITE_ASSETS = {
   "work2Youtube": "ZWZ4mo51cnc",
   "work4": "images/Dmatt.jpg",
   "youtubeId": "zMpii5i4c0s",
-  "appIcon": "images/D1N.png",
+  "appIcon": "images/discernt-app-icon.png",
   "appStoreBadge": "images/AppStore.png",
   "screen1": "images/01.png?v=3",
   "screen2": "images/02.png?v=3",
