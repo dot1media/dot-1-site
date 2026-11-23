@@ -1,6 +1,6 @@
 # Working in this repo
 
-Read `README.md` first — it explains what this app is, its stack, and its
+Read `README.md` first - it explains what this app is, its stack, and its
 environment variables. This is the dot1.media marketing site.
 
 ## Conventions that matter here

@@ -1,7 +1,7 @@
-# Dot One Media — Marketing Site
+# Dot One Media - Marketing Site
 
 The public marketing site for **dot1.media**, the front door to Dot One Media.
-It is a static site — plain HTML, CSS, and a little JavaScript — hosted on Vercel.
+It is a static site - plain HTML, CSS, and a little JavaScript - hosted on Vercel.
 No build step and no framework, so it loads fast and stays easy to maintain.
 
 ## Pages and files
@@ -41,9 +41,9 @@ Vercel on a push to `main`.
 | Repository | What it is | Lives at |
 |---|---|---|
 | `dot-1-site` | Dot One Media marketing site (static) | dot1.media |
-| `dot-1-portal` | Client portal — bookings, quotes, invoices, media review | portal.dot1.media |
+| `dot-1-portal` | Client portal - bookings, quotes, invoices, media review | portal.dot1.media |
 | `dot-1-assets` | Equipment and software inventory / lifecycle tracking | assets.dot1.media |
-| `dot-1-editorial` | Discernt newsroom — report, verify, score, publish | editorial.dot1.media |
+| `dot-1-editorial` | Discernt newsroom - report, verify, score, publish | editorial.dot1.media |
 | `dot-1-news` | Discernt app (iOS / Android / web) + Hono/tRPC backend | App Store / Expo |
 | `dot-1-news-site` | Discernt public news website | discernt.dot1.media |
 
